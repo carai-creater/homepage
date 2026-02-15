@@ -1,56 +1,24 @@
-# CRAai Brand Site
+# CRAai Homepage — 案一覧
 
-株式会社CRAai ブランドサイトの**一つの案**（Next.js App Router + Three.js + GSAP + Framer Motion + Tailwind）
+株式会社CRAai のブランドサイト（HP）案をまとめたリポジトリです。各案は `proposals/` 配下のフォルダに格納されています。
 
-## ディレクトリ構造
+## 案一覧
 
-```
-CRAai.HP/
-├── app/
-│   ├── globals.css          # ベース・ユーティリティ（scanline等）
-│   ├── layout.tsx           # ルートレイアウト・フォント・LanguageProvider
-│   └── page.tsx             # メインページ（Hero / Vision / Mission + GSAP）
-├── components/
-│   ├── scene/
-│   │   ├── index.ts
-│   │   ├── Scene.tsx        # R3F Canvas・背景全面・パーティクル統合
-│   │   ├── ParticleField.tsx # GLSLパーティクル（マウス連動・スクロール連動）
-│   │   └── shaders/
-│   │       ├── particle.vert.glsl
-│   │       └── particle.frag.glsl
-│   └── LanguageSwitcher.tsx # JP/EN切替・走査線演出
-├── contexts/
-│   └── LanguageContext.tsx   # locale状態・withScanline
-├── hooks/
-│   └── useScrollProgress.ts # GSAP ScrollTrigger 全体進捗
-├── lib/
-│   └── i18n/
-│       └── content.ts       # 多言語テキスト（ja/en）
-├── package.json
-├── tailwind.config.ts
-├── tsconfig.json
-└── next.config.js
-```
+| フォルダ | 説明 |
+|----------|------|
+| [proposals/01-three-abyss](./proposals/01-three-abyss) | Next.js + Three.js + GSAP + Framer Motion。ダーク（abyss）ベース・パーティクル演出・日英切替 |
 
-## デザイン
+## 使い方
 
-- **ベースカラー**: `#020617` (abyss)
-- **アクセント**: `#FACC15` (accent)
-- **フォント**: Noto Sans JP（日本語）, Space Grotesk（英語）
-
-## 開発
+- 各案は独立した Next.js プロジェクトです。
+- 試すときは、該当フォルダに移動してから `npm install` → `npm run dev` を実行してください。
 
 ```bash
+cd proposals/01-three-abyss
 npm install
 npm run dev
 ```
 
-`http://localhost:3000` で表示。
+## 新規案の追加
 
-## 技術スタック
-
-- Next.js (App Router)
-- React Three Fiber + Three.js
-- GSAP + ScrollTrigger
-- Framer Motion
-- Tailwind CSS
+新しいHP案を追加するときは、`proposals/` に新しいフォルダ（例: `02-案名`）を作り、その中に Next.js プロジェクトを配置してください。案が増えたらこの README の「案一覧」に追記してください。
