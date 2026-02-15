@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-abyss: #020617;
+  --color-accent: #94b8d4;
+  --color-navy-bg: #050d18;
+  --color-navy-text: #d6ebfb;
+  --font-sans: var(--font-noto-sans-jp), sans-serif;
+  --font-display: var(--font-space-grotesk), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-navy-bg);
+  color: var(--color-navy-text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Text clarity over background */
+.text-readability {
+  text-shadow:
+    0 0 20px rgba(5, 13, 24, 0.8),
+    0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.text-readability-strong {
+  text-shadow:
+    0 0 28px rgba(5, 13, 24, 0.9),
+    0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Scanline overlay for language switch */
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  opacity: 0;
+}
+
+.scanline-active {
+  animation: scanline-sweep 0.4s ease-out forwards;
+}
+
+@keyframes scanline-sweep {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+}
+
+/* Glitch text utility */
+.glitch-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-abyss);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+/* AI "system online" glow — reinforces "AI is running" */
+@keyframes system-glow {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.4)); }
+  50% { opacity: 0.9; filter: drop-shadow(0 0 12px rgba(250, 204, 21, 0.6)); }
+}
+.ai-system-glow {
+  animation: system-glow 2.5s ease-in-out infinite;
+}
