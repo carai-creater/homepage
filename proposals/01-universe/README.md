@@ -1,11 +1,11 @@
-# 01 — Three.js × Abyss
+# 01 — Universe
 
-株式会社CRAai ブランドサイトの一つの案（Next.js App Router + Three.js + GSAP + Framer Motion + Tailwind）
+株式会社CRAai ブランドサイトの一つの案（Next.js App Router + Three.js + GSAP + Framer Motion + Tailwind）。宇宙風パーティクル・Universe テーマ。
 
 ## ディレクトリ構造
 
 ```
-proposals/01-three-abyss/
+proposals/01-universe/
 ├── app/
 │   ├── globals.css          # ベース・ユーティリティ（scanline等）
 │   ├── layout.tsx           # ルートレイアウト・フォント・LanguageProvider
@@ -41,7 +41,7 @@ proposals/01-three-abyss/
 ## 開発
 
 ```bash
-cd proposals/01-three-abyss
+cd proposals/01-universe
 npm install
 npm run dev
 ```

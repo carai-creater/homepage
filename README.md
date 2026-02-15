@@ -6,7 +6,7 @@
 
 | フォルダ | 説明 |
 |----------|------|
-| [proposals/01-three-abyss](./proposals/01-three-abyss) | Next.js + Three.js + GSAP + Framer Motion。ダーク（abyss）ベース・パーティクル演出・日英切替 |
+| [proposals/01-universe](./proposals/01-universe) | **Universe** — Next.js + Three.js + GSAP + Framer Motion。宇宙風パーティクル・日英切替 |
 
 ## 使い方
 
@@ -14,7 +14,7 @@
 - 試すときは、該当フォルダに移動してから `npm install` → `npm run dev` を実行してください。
 
 ```bash
-cd proposals/01-three-abyss
+cd proposals/01-universe
 npm install
 npm run dev
 ```
