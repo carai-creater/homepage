@@ -7,6 +7,7 @@
 | フォルダ | 説明 |
 |----------|------|
 | [proposals/01-universe](./proposals/01-universe) | **Universe** — Next.js + Three.js + GSAP + Framer Motion。宇宙風パーティクル・日英切替 |
+| [proposals/02-quantum-cat](./proposals/02-quantum-cat) | **Quantum Cat** — 静的サイト（HTML/CSS/JS）。Navy×イエロー、日英切替・横流れプロジェクト |
 
 ## 使い方
 

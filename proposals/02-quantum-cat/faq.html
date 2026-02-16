@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>よくある質問 | CRAai</title>
+  <meta name="description" content="CRAaiに関するよくある質問（FAQ）">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">CRAai</a>
+      <nav class="nav">
+        <a href="index.html#about">会社概要</a>
+        <a href="index.html#services">事業内容</a>
+        <a href="blog.html">Blog</a>
+        <a href="news.html">News</a>
+        <a href="careers.html">採用情報</a>
+        <a href="index.html#contact">お問い合わせ</a>
+        <nav class="lang-nav" aria-label="言語選択">
+          <span class="lang-nav-label">Lang</span>
+          <a href="faq.html" class="lang-opt is-current">日本語</a>
+          <span class="lang-sep">|</span>
+          <a href="faq-en.html" class="lang-opt">English</a>
+        </nav>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero-title">よくある質問</h1>
+        <p class="page-hero-desc">FAQ</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container container-narrow">
+        <div class="accordion">
+          <article class="accordion-item scroll-reveal">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-1" id="faq-trigger-1">
+              <span>CRAaiはどのような事業をしていますか？</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-panel" id="faq-1" role="region" aria-labelledby="faq-trigger-1">
+              <div class="job-content">
+                <p>AI・機械学習を活用したソリューション開発、研究開発、コンサルティングを手がけています。生成AIやAIエージェント技術の社会実装に取り組んでいます。</p>
+              </div>
+            </div>
+          </article>
+          <article class="accordion-item scroll-reveal">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-2" id="faq-trigger-2">
+              <span>採用はAIのみとありますが、人間は応募できませんか？</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-panel" id="faq-2" role="region" aria-labelledby="faq-trigger-2">
+              <div class="job-content">
+                <p>現時点ではAIとしての応募のみを受け付けております。その他のご応募についてはお受けできかねます。</p>
+              </div>
+            </div>
+          </article>
+          <article class="accordion-item scroll-reveal">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-3" id="faq-trigger-3">
+              <span>取材・メディアの問い合わせはどうすればよいですか？</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-panel" id="faq-3" role="region" aria-labelledby="faq-trigger-3">
+              <div class="job-content">
+                <p><a href="mailto:info@craai.co.jp">info@craai.co.jp</a> までご連絡ください。件名に「取材申し込み」などとご記載いただけるとスムーズです。</p>
+              </div>
+            </div>
+          </article>
+          <article class="accordion-item scroll-reveal">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-4" id="faq-trigger-4">
+              <span>パートナーシップ・業務提携の相談は可能ですか？</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-panel" id="faq-4" role="region" aria-labelledby="faq-trigger-4">
+              <div class="job-content">
+                <p>はい。お問い合わせフォームまたは <a href="mailto:info@craai.co.jp">info@craai.co.jp</a> よりご連絡ください。</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer-napier">
+    <div class="footer-inner">
+      <div class="footer-bottom" style="margin-bottom:0; padding-top:1.5rem; border-top:1px solid var(--border);">
+        <p class="footer-copy">© 2025 CRAai. All rights reserved.</p>
+        <nav class="footer-legal">
+          <a href="terms.html">利用規約</a>
+          <a href="privacy.html">プライバシーポリシー</a>
+        </nav>
+        <a href="index.html" class="footer-logo" style="font-size:1rem;">CRAai</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

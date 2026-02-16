@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRAai | オフィシャルサイト</title>
+  <meta name="description" content="CRAaiのオフィシャルウェブサイト。私たちはテクノロジーで新しい価値を創造します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-home">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">CRAai</a>
+      <nav class="nav">
+        <a href="#about">会社概要</a>
+        <a href="#services">事業内容</a>
+        <a href="#projects">プロジェクト</a>
+        <a href="blog.html">Blog</a>
+        <a href="news.html">News</a>
+        <a href="careers.html">採用情報</a>
+        <a href="#contact">お問い合わせ</a>
+        <nav class="lang-nav" aria-label="言語選択">
+          <span class="lang-nav-label">Lang</span>
+          <a href="index.html" class="lang-opt is-current">日本語</a>
+          <span class="lang-sep">|</span>
+          <a href="index-en.html" class="lang-opt">English</a>
+        </nav>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-home">
+      <div class="hero-image-wrap">
+        <div class="hero-slider" data-hero-slider>
+          <div class="hero-slide is-active"><img src="assets/hero-1.png" alt="CRAai – テクノロジーと都市" class="hero-image"></div>
+          <div class="hero-slide"><img src="assets/hero-2.png" alt="CRAai – データとイノベーション" class="hero-image"></div>
+          <div class="hero-slide"><img src="assets/hero-3.png" alt="CRAai – ネオンとアーケード" class="hero-image"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-dots" aria-hidden="true">
+          <button type="button" class="hero-dot is-active" data-slide="0" aria-label="スライド1"></button>
+          <button type="button" class="hero-dot" data-slide="1" aria-label="スライド2"></button>
+          <button type="button" class="hero-dot" data-slide="2" aria-label="スライド3"></button>
+        </div>
+      </div>
+      <div class="hero-content hero-content-center">
+        <h1 class="hero-title hero-title-main">CRAai</h1>
+        <p class="hero-subtitle">テクノロジーで、未来を創る。</p>
+      </div>
+    </section>
+
+    <section class="section section-about scroll-reveal" id="about">
+      <div class="container">
+        <h2 class="section-title">会社概要</h2>
+        <div class="about-content">
+          <p class="about-lead">
+            CRAaiは、最先端のテクノロジーとAIを活用し、お客様のビジネスや社会課題の解決に取り組む企業です。
+          </p>
+          <dl class="about-list">
+            <dt>会社名</dt>
+            <dd>CRAai</dd>
+            <dt>設立</dt>
+            <dd>（ご記入ください）</dd>
+            <dt>代表者</dt>
+            <dd>（ご記入ください）</dd>
+            <dt>所在地</dt>
+            <dd>（ご記入ください）</dd>
+            <dt>事業内容</dt>
+            <dd>AI・機械学習を活用したソリューション開発、研究開発、コンサルティング</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <figure class="content-img-block scroll-reveal">
+      <img src="assets/hero-1.png" alt="CRAai – テクノロジーと都市" class="content-img">
+      <figcaption class="content-img-caption">テクノロジーと都市</figcaption>
+    </figure>
+
+    <section class="section section-services" id="services">
+      <div class="container scroll-reveal">
+        <h2 class="section-title">事業内容</h2>
+        <p class="section-lead">私たちは以下の領域で価値を提供しています。</p>
+        <ul class="services-grid">
+          <li class="service-card scroll-reveal scroll-reveal-delay-1">
+            <span class="service-icon" aria-hidden="true">AI</span>
+            <h3 class="service-title">AI・機械学習</h3>
+            <p class="service-desc">生成AI、LLM、AIエージェントなど最先端技術を活用したソリューションの研究・開発・導入支援を行います。</p>
+          </li>
+          <li class="service-card scroll-reveal scroll-reveal-delay-2">
+            <span class="service-icon" aria-hidden="true">R&D</span>
+            <h3 class="service-title">研究開発</h3>
+            <p class="service-desc">基礎研究から応用開発まで、お客様の課題に合わせた技術開発とプロトタイピングをサポートします。</p>
+          </li>
+          <li class="service-card scroll-reveal scroll-reveal-delay-3">
+            <span class="service-icon" aria-hidden="true">DX</span>
+            <h3 class="service-title">コンサルティング</h3>
+            <p class="service-desc">AI導入戦略の策定、データ活用、業務効率化など、デジタル変革の伴走支援を提供します。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-projects scroll-reveal" id="projects">
+      <div class="container">
+        <h2 class="section-title">Project List</h2>
+        <p class="section-lead">現時点で進行中のプロジェクトです。</p>
+      </div>
+      <div class="project-flow-wrap">
+        <ul class="project-list" aria-label="プロジェクト一覧">
+          <li class="project-item">Buildy</li>
+          <li class="project-item">poketmap</li>
+          <li class="project-item">CRAai2</li>
+          <li class="project-item">BOOKMATE</li>
+          <li class="project-item">yoyakuru</li>
+          <li class="project-item">Y</li>
+          <li class="project-item">Buildy</li>
+          <li class="project-item">poketmap</li>
+          <li class="project-item">CRAai2</li>
+          <li class="project-item">BOOKMATE</li>
+          <li class="project-item">yoyakuru</li>
+          <li class="project-item">Y</li>
+        </ul>
+      </div>
+    </section>
+
+    <figure class="content-img-block scroll-reveal">
+      <img src="assets/hero-2.png" alt="データとイノベーションの世界" class="content-img">
+      <figcaption class="content-img-caption">テクノロジーと創造</figcaption>
+    </figure>
+
+    <section class="section section-cta scroll-reveal">
+      <div class="container">
+        <div class="cta-inner">
+          <h2 class="cta-title">一緒に働きませんか？</h2>
+          <p class="cta-desc">CRAaiでは、新しい技術と挑戦を大切にする仲間を募集しています。</p>
+          <a href="careers.html" class="btn btn-primary">採用情報を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <figure class="content-img-block scroll-reveal">
+      <img src="assets/hero-3.png" alt="ネオンとアーケード" class="content-img">
+      <figcaption class="content-img-caption">挑戦と可能性</figcaption>
+    </figure>
+
+    <section class="section section-contact scroll-reveal" id="contact">
+      <div class="container">
+        <h2 class="section-title">お問い合わせ</h2>
+        <p class="section-lead">取材・ビジネス・採用に関するお問い合わせは下記までご連絡ください。</p>
+        <div class="contact-box">
+          <p class="contact-email">
+            <a href="mailto:info@craai.co.jp">info@craai.co.jp</a>
+          </p>
+          <p class="contact-note">※ 採用に関するお問い合わせは<a href="careers.html">採用情報ページ</a>をご確認ください。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer-napier">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">CRAai</a>
+          <p class="footer-tagline">CRAaiは、テクノロジーとAIで新しい価値を創造し、ビジネスや社会の課題解決に取り組みます。</p>
+        </div>
+        <a href="careers.html" class="btn btn-footer">採用情報を見る</a>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h3 class="footer-col-title">CRAai</h3>
+          <ul class="footer-links">
+            <li><a href="#about">会社概要</a></li>
+            <li><a href="#services">事業内容</a></li>
+            <li><a href="#projects">プロジェクト</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="careers.html">採用情報</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Build</h3>
+          <ul class="footer-links">
+            <li><a href="docs.html">ドキュメント</a></li>
+            <li><a href="#services">サービス</a></li>
+            <li><a href="#projects">プロジェクト一覧</a></li>
+            <li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Support</h3>
+          <ul class="footer-links">
+            <li><a href="faq.html">よくある質問</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="mailto:info@craai.co.jp">メールで問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 CRAai. All rights reserved.</p>
+        <nav class="footer-legal">
+          <a href="terms.html">利用規約</a>
+          <a href="privacy.html">プライバシーポリシー</a>
+        </nav>
+        <div class="footer-social">
+          <a href="#" target="_blank" rel="noopener" aria-label="X">𝕏</a>
+          <a href="#" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
