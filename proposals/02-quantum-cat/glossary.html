@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI用語一覧 | CRAai</title>
+  <meta name="description" content="AI・機械学習・生成AIに関する用語の一覧と解説。CRAaiが取り組む技術を理解するための用語集です。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* サブページ用：他ページとデザインを揃え、崩れを防ぐ */
+    body.page-glossary {
+      cursor: auto;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    body.page-glossary .site-header {
+      padding: 1rem 1.5rem;
+      border-bottom: none;
+      box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.04), 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+    body.page-glossary .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1rem;
+    }
+    body.page-glossary .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    body.page-glossary .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      align-items: center;
+      justify-content: flex-end;
+      min-width: 0;
+    }
+    body.page-glossary .nav a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    body.page-glossary .nav a:hover { color: var(--text); }
+    body.page-glossary .section {
+      padding: 2.5rem 0;
+    }
+    body.page-glossary .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    .glossary-intro { color: var(--text-muted); margin: 0 0 2rem; font-size: 0.95rem; line-height: 1.7; overflow-wrap: break-word; word-break: break-word; }
+    .glossary-intro a { color: var(--accent); text-decoration: none; }
+    .glossary-intro a:hover { text-decoration: underline; }
+    .glossary-category { margin-bottom: 2.5rem; }
+    .glossary-category:last-child { margin-bottom: 0; }
+    .glossary-category-title { font-size: 1.1rem; font-weight: 600; color: var(--accent); margin: 0 0 1rem; padding-bottom: 0.5rem; border-bottom: none; box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.04); }
+    .glossary-list { list-style: none; padding: 0; margin: 0; }
+    .glossary-item { background: var(--surface); border: none; border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 0.75rem; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 2px 12px rgba(0, 0, 0, 0.08); transition: box-shadow 0.2s ease; }
+    .glossary-item:hover { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 4px 20px rgba(0, 0, 0, 0.12); }
+    .glossary-term { font-weight: 600; color: var(--text); margin: 0 0 0.35rem; font-size: 1rem; }
+    .glossary-term-en { font-size: 0.8rem; color: var(--text-muted); font-weight: 400; margin: 0 0 0.5rem; }
+    .glossary-desc { margin: 0; font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; overflow-wrap: break-word; }
+    .glossary-search-wrap { margin-bottom: 2rem; }
+    .glossary-search { width: 100%; max-width: 400px; padding: 0.75rem 1rem; font-size: 1rem; border: none; border-radius: var(--radius); background: var(--surface); color: var(--text); box-sizing: border-box; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 2px 8px rgba(0, 0, 0, 0.06); }
+    .glossary-search::placeholder { color: var(--text-muted); }
+    .glossary-search:focus { outline: none; box-shadow: 0 0 0 1px rgba(255, 212, 59, 0.3), 0 0 0 3px var(--accent-glow); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  </style>
+</head>
+<body class="page-glossary">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">CRAai</a>
+      <nav class="nav">
+        <a href="index.html#vision">ビジョン</a>
+        <a href="index.html#mission">ミッション</a>
+        <a href="index.html#services">サービス</a>
+        <a href="index.html#projects">プロジェクト</a>
+        <a href="index.html#company">会社情報</a>
+        <a href="blog.html">Blog</a>
+        <a href="news.html">News</a>
+        <a href="careers.html">採用情報</a>
+        <a href="glossary.html">AI用語一覧</a>
+        <a href="contact.html">お問い合わせ</a>
+        <nav class="lang-nav" aria-label="言語選択">
+          <span class="lang-nav-label">Lang</span>
+          <a href="glossary.html" class="lang-opt is-current">日本語</a>
+          <span class="lang-sep">|</span>
+          <a href="glossary-en.html" class="lang-opt">English</a>
+        </nav>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero-title">AI用語一覧</h1>
+        <p class="page-hero-desc">Glossary — AI・機械学習・生成AIに関連する用語の解説</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container container-narrow">
+        <p class="glossary-intro">
+          自律運営やAIエージェントを理解するために、よく使う用語をカテゴリ別にまとめました。検索ボックスで絞り込みもできます。
+        </p>
+
+        <div class="glossary-search-wrap">
+          <label for="glossary-search" class="visually-hidden">用語で検索</label>
+          <input type="search" id="glossary-search" class="glossary-search" placeholder="用語で検索..." aria-label="用語で検索">
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">人工知能の基礎</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="パターン認識">
+              <p class="glossary-term">パターン認識</p>
+              <p class="glossary-term-en">Pattern Recognition</p>
+              <p class="glossary-desc">データのなかのパターンを見つけたり、種類分けしたりする技術。画像・音声・文字の認識など、機械学習の応用として伸びてきた分野。</p>
+            </li>
+            <li class="glossary-item" data-term="シンギュラリティ 技術的特異点">
+              <p class="glossary-term">シンギュラリティ（技術的特異点）</p>
+              <p class="glossary-term-en">Singularity</p>
+              <p class="glossary-desc">AIが自分より賢いAIを生み、知能が急激に伸びるという想定上の転換点。倫理や社会への影響を論じる文脈で使われる。</p>
+            </li>
+            <li class="glossary-item" data-term="エキスパートシステム 知識">
+              <p class="glossary-term">エキスパートシステム</p>
+              <p class="glossary-term-en">Expert System</p>
+              <p class="glossary-desc">専門家の知見をルールや知識ベースに落とし込み、推論で答えを出す仕組み。機械学習が広まる以前の、AIの代表的な形のひとつ。</p>
+            </li>
+            <li class="glossary-item" data-term="ビッグデータ">
+              <p class="glossary-term">ビッグデータ</p>
+              <p class="glossary-term-en">Big Data</p>
+              <p class="glossary-desc">量・種類・更新の速さのどれをとっても、従来のやり方では扱いきれないデータ。AIの学習材料として使われ、性能向上の前提になっている。</p>
+            </li>
+            <li class="glossary-item" data-term="中国語の部屋 シンボル">
+              <p class="glossary-term">中国語の部屋</p>
+              <p class="glossary-term-en">Chinese Room</p>
+              <p class="glossary-desc">記号をいじるだけでは「理解している」とは言えない、という思考実験。AIに本当に理解があるかどうかの哲学的な問いで引き合いに出される。</p>
+            </li>
+            <li class="glossary-item" data-term="深層学習 ディープラーニング">
+              <p class="glossary-term">深層学習</p>
+              <p class="glossary-term-en">Deep Learning</p>
+              <p class="glossary-desc">層を何重にも重ねたニューラルネットで行う学習。画像・音声・言葉の処理で高い性能を出し、大規模言語モデルや画像生成の基盤となっている。</p>
+            </li>
+            <li class="glossary-item" data-term="強いAI 弱いAI 汎用">
+              <p class="glossary-term">強いAIと弱いAI</p>
+              <p class="glossary-term-en">Strong AI / Weak AI</p>
+              <p class="glossary-desc">「弱いAI」は画像認識や翻訳など、決まった課題にだけ使うAI。「強いAI」は人間並みの汎用知能を想定した概念で、まだ実在していない。</p>
+            </li>
+            <li class="glossary-item" data-term="フレーム問題">
+              <p class="glossary-term">フレーム問題</p>
+              <p class="glossary-term-en">Frame Problem</p>
+              <p class="glossary-desc">ある行動に本当に必要な情報と、そうでない情報をうまく切り分けることの難しさ。ロボットやエージェントを設計するときの話題になる。</p>
+            </li>
+            <li class="glossary-item" data-term="データマイニング">
+              <p class="glossary-term">データマイニング</p>
+              <p class="glossary-term-en">Data Mining</p>
+              <p class="glossary-desc">膨大なデータのなかから、役に立つパターンやルールを掘り出す一連の作業。機械学習や統計を組み合わせ、ビジネス・研究の両方で用いられる。</p>
+            </li>
+            <li class="glossary-item" data-term="チューリングテスト">
+              <p class="glossary-term">チューリングテスト</p>
+              <p class="glossary-term-en">Turing Test</p>
+              <p class="glossary-desc">審査員がテキストだけのやり取りで相手を区別できなければ、AIに知能があるとみなすという考え方。AIの定義を語るときによく引き合いに出される。</p>
+            </li>
+            <li class="glossary-item" data-term="生成AI ジェネラティブ">
+              <p class="glossary-term">生成AI</p>
+              <p class="glossary-term-en">Generative AI</p>
+              <p class="glossary-desc">学んだパターンから、テキストや画像・音声などを「つくり出す」AI。対話や要約・創作・コード生成に活用される。従来の「当てる」だけでなく「生み出す」ところが違い。</p>
+            </li>
+            <li class="glossary-item" data-term="推論 認識 判断">
+              <p class="glossary-term">推論・認識・判断</p>
+              <p class="glossary-term-en">Inference / Recognition / Decision</p>
+              <p class="glossary-desc">推論＝手持ちの知識から結論を出すこと。認識＝画像や音声などの入力の意味を読み取ること。判断＝どれを選ぶか・どう動くかを決めること。AIが担う代表的な役割として語られる。</p>
+            </li>
+            <li class="glossary-item" data-term="マルチモーダル マルチモーダルAI">
+              <p class="glossary-term">マルチモーダルAI</p>
+              <p class="glossary-term-en">Multimodal AI</p>
+              <p class="glossary-desc">文章・画像・音声など、種類の違う入力をいっぺんに扱えるAI。ニーズの把握やコンテンツの理解を、いろんな角度から行う場面で用いる。</p>
+            </li>
+            <li class="glossary-item" data-term="機械学習 マシンラーニング">
+              <p class="glossary-term">機械学習</p>
+              <p class="glossary-term-en">Machine Learning / ML</p>
+              <p class="glossary-desc">データにもとづいてパターンやルールを身につけ、コードで逐一指定しなくても仕事をこなせるようにする仕組み。教師あり・教師なし・強化学習の三つに分けて語られることが多い。</p>
+            </li>
+            <li class="glossary-item" data-term="AI 人工知能 アーティフィシャル">
+              <p class="glossary-term">AI（人工知能）</p>
+              <p class="glossary-term-en">Artificial Intelligence</p>
+              <p class="glossary-desc">コンピュータが推論・認識・判断・学習といった知的な振る舞いをする技術全般。データからパターンを獲得し、人手でルールを書かずに課題を解く。いまは機械学習や深層学習ベースのシステムを指す用例がほとんど。</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">機械学習の概要</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="混同行列 適合率 再現率 精度">
+              <p class="glossary-term">混同行列・適合率・再現率</p>
+              <p class="glossary-term-en">Confusion Matrix / Precision / Recall</p>
+              <p class="glossary-desc">混同行列＝予測と正解の対応を並べた表。適合率＝「正と言ったもののうち本当に正だった割合」、再現率＝「正のもののうち正と言えた割合」。偏ったデータの評価で重要。</p>
+            </li>
+            <li class="glossary-item" data-term="強化学習 報酬 エージェント">
+              <p class="glossary-term">強化学習</p>
+              <p class="glossary-term-en">Reinforcement Learning</p>
+              <p class="glossary-desc">エージェントが環境に働きかけ、得られる報酬がなるべく大きくなるように振る舞いを学ぶ方法。ゲームAIやロボ制御・推薦に応用されている。</p>
+            </li>
+            <li class="glossary-item" data-term="主成分分析 PCA 次元削減">
+              <p class="glossary-term">主成分分析（PCA）</p>
+              <p class="glossary-term-en">Principal Component Analysis</p>
+              <p class="glossary-desc">データのバラつきが大きい軸（主成分）に押し込めて次元を減らす。可視化や前処理・ノイズ落としに用いる。</p>
+            </li>
+            <li class="glossary-item" data-term="過学習 未学習 汎化">
+              <p class="glossary-term">過学習・未学習・汎化性能</p>
+              <p class="glossary-term-en">Overfitting / Underfitting / Generalization</p>
+              <p class="glossary-desc">過学習＝練習データにだけぴったり合って、本番ではかえって悪くなる状態。未学習＝モデルが足りず、まだ十分に覚えられていない状態。汎化性能＝まだ見ていないデータでもどれだけ当てられるか。</p>
+            </li>
+            <li class="glossary-item" data-term="SVM サポートベクターマシン">
+              <p class="glossary-term">SVM（サポートベクターマシン）</p>
+              <p class="glossary-term-en">Support Vector Machine</p>
+              <p class="glossary-desc">「境界とデータの距離（マージン）を広げる」という考えの分類・回帰モデル。カーネルで曲がった境界も扱え、以前からよく使われてきた。</p>
+            </li>
+            <li class="glossary-item" data-term="教師なし学習 ラベルなし">
+              <p class="glossary-term">教師なし学習</p>
+              <p class="glossary-term-en">Unsupervised Learning</p>
+              <p class="glossary-desc">正解ラベルなしのデータから、勝手にパターンや構造を見つけ出す学習。グループ分け・次元削減・異常検知などに用いられる。</p>
+            </li>
+            <li class="glossary-item" data-term="特徴量 特徴量設計 特徴量抽出">
+              <p class="glossary-term">特徴量・特徴量設計</p>
+              <p class="glossary-term-en">Feature / Feature Engineering</p>
+              <p class="glossary-desc">モデルに渡す「データの表し方」。昔は人が特徴を設計していたが、深層学習では層が自分で効きそうな特徴を学ぶ。</p>
+            </li>
+            <li class="glossary-item" data-term="Q学習 マルコフ 価値関数">
+              <p class="glossary-term">Q学習・マルコフ決定過程</p>
+              <p class="glossary-term-en">Q-Learning / Markov Decision Process</p>
+              <p class="glossary-desc">Q学習＝「この状態でこの行動をしたときの価値（Q値）」を学ぶ強化学習の代表格。MDPは状態・行動・報酬・遷移を整理した数学的な枠組み。</p>
+            </li>
+            <li class="glossary-item" data-term="交差検証 ホールドアウト 正解率 適合率 再現率 F値">
+              <p class="glossary-term">交差検証・モデル評価</p>
+              <p class="glossary-term-en">Cross-Validation / Holdout / Precision / Recall / F1</p>
+              <p class="glossary-desc">データをいくつかに分け、何度も「学習→評価」を回して性能を見積もる。正解率・適合率・再現率・F値・AUCなどで測る。</p>
+            </li>
+            <li class="glossary-item" data-term="クラスタリング k-means 階層">
+              <p class="glossary-term">クラスタリング</p>
+              <p class="glossary-term-en">Clustering</p>
+              <p class="glossary-desc">正解なしのデータを「似ているもの同士」でまとめる学習。k-meansや階層的クラスタリングなど、方法がいくつかある。</p>
+            </li>
+            <li class="glossary-item" data-term="アンサンブル学習 バギング ブースティング">
+              <p class="glossary-term">アンサンブル学習</p>
+              <p class="glossary-term-en">Ensemble Learning</p>
+              <p class="glossary-desc">いくつかのモデルを並べて、その答えを合わせて使う。個々の苦手を補い合い、精度や汎化を上げる目的で用いられる。</p>
+            </li>
+            <li class="glossary-item" data-term="分類 回帰 回帰問題 分類問題">
+              <p class="glossary-term">分類と回帰</p>
+              <p class="glossary-term-en">Classification / Regression</p>
+              <p class="glossary-desc">分類＝カテゴリのような離散的な答えを当てる課題。回帰＝売上や温度のような連続した数値を当てる課題。どちらも教師あり学習の典型的な形。</p>
+            </li>
+            <li class="glossary-item" data-term="半教師あり 自己教師あり">
+              <p class="glossary-term">半教師あり学習・自己教師あり学習</p>
+              <p class="glossary-term-en">Semi-supervised / Self-supervised Learning</p>
+              <p class="glossary-desc">半教師あり＝ラベルありとラベルなしをいっしょに使う学習。自己教師あり＝ラベルをデータから自動でつくって学ぶ。LLMの事前学習もここに含まれる。</p>
+            </li>
+            <li class="glossary-item" data-term="決定木 ランダムフォレスト">
+              <p class="glossary-term">決定木・ランダムフォレスト</p>
+              <p class="glossary-term-en">Decision Tree / Random Forest</p>
+              <p class="glossary-desc">決定木＝条件分岐の積み重ねで答えを出すモデル。ランダムフォレストはそれをたくさん束ねたもので、過学習に強く中身も追いやすい。</p>
+            </li>
+            <li class="glossary-item" data-term="ロジスティック回帰 線形回帰">
+              <p class="glossary-term">ロジスティック回帰・線形回帰</p>
+              <p class="glossary-term-en">Logistic Regression / Linear Regression</p>
+              <p class="glossary-desc">線形回帰＝数値の予測、ロジスティック回帰＝二者択一の分類に使う線形モデル。シンプルで読みやすいため、まず試す基準としてよく用いられる。</p>
+            </li>
+            <li class="glossary-item" data-term="教師あり学習 ラベル 正解">
+              <p class="glossary-term">教師あり学習</p>
+              <p class="glossary-term-en">Supervised Learning</p>
+              <p class="glossary-desc">「入力」と「正解」のペアを与えて覚えさせる方法。分類や回帰に使われ、写真にラベルを付けて画像認識を覚えさせるようなイメージ。</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">ディープラーニングの要素技術</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="ResNet スキップ結合">
+              <p class="glossary-term">ResNet・スキップ結合</p>
+              <p class="glossary-term-en">Residual Network / Skip Connection</p>
+              <p class="glossary-desc">入力をそのまま後ろの層に足し込む（スキップ）ことで勾配が流れやすくなり、深いネットが学べるようになった。ResNetがその代表。</p>
+            </li>
+            <li class="glossary-item" data-term="正則化 ドロップアウト L1 L2">
+              <p class="glossary-term">正則化・ドロップアウト</p>
+              <p class="glossary-term-en">Regularization / Dropout</p>
+              <p class="glossary-desc">やりすぎ学習を抑えるための工夫。L1・L2は重みを小さく押さえ、ドロップアウトは学習中にノードをランダムに切って使わないようにする。</p>
+            </li>
+            <li class="glossary-item" data-term="転移学習 事前学習">
+              <p class="glossary-term">転移学習・事前学習</p>
+              <p class="glossary-term-en">Transfer Learning / Pre-training</p>
+              <p class="glossary-desc">別のタスクやデータで一度学んだモデルを、目的のタスクや少ないデータに流用する。計算やデータの負担を減らすのに有効。</p>
+            </li>
+            <li class="glossary-item" data-term="勾配消失 勾配爆発">
+              <p class="glossary-term">勾配消失・勾配爆発</p>
+              <p class="glossary-term-en">Vanishing / Exploding Gradient</p>
+              <p class="glossary-desc">層が深いと、逆伝播する勾配がほとんどゼロになったり、逆に blow up したりする問題。ReLUやスキップ結合・正規化で和らげる。</p>
+            </li>
+            <li class="glossary-item" data-term="活性化関数 ReLU シグモイド">
+              <p class="glossary-term">活性化関数</p>
+              <p class="glossary-term-en">Activation Function</p>
+              <p class="glossary-desc">ノードの出力を「曲げる」ことで非線形にする関数。ReLUやシグモイド・tanh・ソフトマックスなどがあり、層を重ねたときの表現力の源になる。</p>
+            </li>
+            <li class="glossary-item" data-term="オートエンコーダ VAE 変分">
+              <p class="glossary-term">オートエンコーダ・VAE</p>
+              <p class="glossary-term-en">Autoencoder / Variational Autoencoder</p>
+              <p class="glossary-desc">入力を一度ギュッと圧縮してから元に戻すモデル。VAEはその「圧縮した空間」を確率で表し、そこから新しいサンプルを生成できる。</p>
+            </li>
+            <li class="glossary-item" data-term="パーセプトロン 単純">
+              <p class="glossary-term">パーセプトロン</p>
+              <p class="glossary-term-en">Perceptron</p>
+              <p class="glossary-desc">入力を重みづけして足し、閾値で〇か×かを出す、いちばんシンプルな形。これを何層も重ねたのが多層パーセプトロン（MLP）。</p>
+            </li>
+            <li class="glossary-item" data-term="バッチ正規化 レイヤー正規化">
+              <p class="glossary-term">バッチ正規化・レイヤー正規化</p>
+              <p class="glossary-term-en">Batch Normalization / Layer Normalization</p>
+              <p class="glossary-desc">層の出力を正規化して学習を安定させる。BatchNormはバッチごと、LayerNormは層のなかで正規化。Transformer では LayerNorm がよく用いられる。</p>
+            </li>
+            <li class="glossary-item" data-term="誤差逆伝播法 バックプロパゲーション 勾配">
+              <p class="glossary-term">誤差逆伝播法</p>
+              <p class="glossary-term-en">Backpropagation</p>
+              <p class="glossary-desc">出てきた誤差を後ろの層から前に戻し、各重みの「直す向き」を求める方法。深いネットの学習の要。勾配が消えたり吹き出したりしないよう工夫が必要。</p>
+            </li>
+            <li class="glossary-item" data-term="CNN 畳み込み 画像認識">
+              <p class="glossary-term">CNN（畳み込みニューラルネットワーク）</p>
+              <p class="glossary-term-en">Convolutional Neural Network</p>
+              <p class="glossary-desc">畳み込みとプーリングの層で、画像の「局所的なかたまり」を拾い出すネットワーク。画像認識・物体検出・領域分割などでおなじみ。</p>
+            </li>
+            <li class="glossary-item" data-term="ハイパーパラメータ チューニング">
+              <p class="glossary-term">ハイパーパラメータ</p>
+              <p class="glossary-term-en">Hyperparameter</p>
+              <p class="glossary-desc">学習の前に人が決める値（学習率・層の数・バッチサイズなど）。グリッドサーチやランダムサーチ・ベイズ最適化で探す。</p>
+            </li>
+            <li class="glossary-item" data-term="勾配降下法 確率的 SGD 学習率 エポック">
+              <p class="glossary-term">勾配降下法・学習率・エポック</p>
+              <p class="glossary-term-en">Gradient Descent / Learning Rate / Epoch</p>
+              <p class="glossary-desc">勾配の向きに沿ってパラメータをちょっとずつ直していく、最適化の基本。学習率＝一歩の大きさ、エポック＝訓練データを一周する回数。SGDやAdamがよく使われる。</p>
+            </li>
+            <li class="glossary-item" data-term="プーリング 最大 平均">
+              <p class="glossary-term">プーリング層</p>
+              <p class="glossary-term-en">Pooling Layer</p>
+              <p class="glossary-desc">畳み込みの結果を「ブロックごとにひとつにまとめる」層。最大値や平均を取る方法があり、ずれに強く計算も軽くなる。</p>
+            </li>
+            <li class="glossary-item" data-term="GAN 敵対的 生成">
+              <p class="glossary-term">GAN（敵対的生成ネットワーク）</p>
+              <p class="glossary-term-en">Generative Adversarial Network</p>
+              <p class="glossary-desc">「つくる側」と「見分ける側」が競い合いながら学ぶ仕組み。画像生成で一時代を築いたが、いまは拡散モデルが主役に。</p>
+            </li>
+            <li class="glossary-item" data-term="隠れ層 入力層 出力層">
+              <p class="glossary-term">入力層・隠れ層・出力層</p>
+              <p class="glossary-term-en">Input / Hidden / Output Layer</p>
+              <p class="glossary-desc">入力層＝データの入口。隠れ層＝そのあいだで特徴を変換。出力層＝最終的な答えを出す。層が深いほど表現の幅が広がる。</p>
+            </li>
+            <li class="glossary-item" data-term="RNN LSTM 時系列">
+              <p class="glossary-term">RNN・LSTM</p>
+              <p class="glossary-term-en">Recurrent Neural Network / Long Short-Term Memory</p>
+              <p class="glossary-desc">時系列や「並んだデータ」を扱うネットワーク。RNNは過去を覚えるが勾配が消えやすい。LSTMはゲートで長期の依存も覚えやすくしている。</p>
+            </li>
+            <li class="glossary-item" data-term="Adam SGD オプティマイザ">
+              <p class="glossary-term">Adam・SGD（最適化アルゴリズム）</p>
+              <p class="glossary-term-en">Adam / Stochastic Gradient Descent</p>
+              <p class="glossary-desc">SGD＝ミニバッチごとに勾配でパラメータを更新。Adam＝それに「勢い」と学習率の自動調整を足したもので、深層学習では定番。</p>
+            </li>
+            <li class="glossary-item" data-term="ニューラルネットワーク 神経">
+              <p class="glossary-term">ニューラルネットワーク</p>
+              <p class="glossary-term-en">Neural Network</p>
+              <p class="glossary-desc">脳の神経のつながりをまねたモデル。ノードを何層にも並べ、つなぎの重みと活性化関数で入力を変えながら学習する。</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">生成AI・LLMの技術</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="ガードレール 安全 出力">
+              <p class="glossary-term">ガードレール</p>
+              <p class="glossary-term-en">Guardrail</p>
+              <p class="glossary-desc">生成AIの入出力を見張り、不適切な内容や機密の漏れを防ぐ仕組み。プロンプトのチェック・出力フィルタ・ポリシーで縛る。</p>
+            </li>
+            <li class="glossary-item" data-term="RAG 検索拡張生成">
+              <p class="glossary-term">RAG（検索拡張生成）</p>
+              <p class="glossary-term-en">Retrieval-Augmented Generation</p>
+              <p class="glossary-desc">外部の知識やドキュメントを検索し、その結果をプロンプトに載せてLLMに答えさせる。でたらめを減らし、最新・社内の情報をのせるときに用いる。</p>
+            </li>
+            <li class="glossary-item" data-term="Chain-of-Thought CoT 思考の連鎖">
+              <p class="glossary-term">Chain-of-Thought（CoT）</p>
+              <p class="glossary-term-en">Chain-of-Thought Prompting</p>
+              <p class="glossary-desc">「 step by step で考えて」とプロンプトで促す。複雑な推論や計算で、答えの質が上がることがある。</p>
+            </li>
+            <li class="glossary-item" data-term="トランスフォーマー Transformer">
+              <p class="glossary-term">トランスフォーマー</p>
+              <p class="glossary-term-en">Transformer</p>
+              <p class="glossary-desc">Attention を核にしたモデル構造。長い文の前後の関係を並列に扱え、いまの LLM の多くがこの形を基盤としている。</p>
+            </li>
+            <li class="glossary-item" data-term="ベンチマーク 評価 リーダーボード">
+              <p class="glossary-term">ベンチマーク・リーダーボード</p>
+              <p class="glossary-term-en">Benchmark / Leaderboard</p>
+              <p class="glossary-desc">モデル同士を公平に比べるための標準タスクやデータセット。GLUE・MMLU など。リーダーボードはその結果をランキングにしたもの。</p>
+            </li>
+            <li class="glossary-item" data-term="ファインチューニング  fine-tuning">
+              <p class="glossary-term">ファインチューニング</p>
+              <p class="glossary-term-en">Fine-tuning</p>
+              <p class="glossary-desc">すでに学んだモデルを、やりたいタスクや分野のデータでもう少し学ばせること。Instruction Tuning は「指示に従う」ように仕込む方法。</p>
+            </li>
+            <li class="glossary-item" data-term="ハルシネーション 幻覚">
+              <p class="glossary-term">ハルシネーション</p>
+              <p class="glossary-term-en">Hallucination</p>
+              <p class="glossary-desc">事実と違う内容を、さも正しそうに出力してしまうこと。正確さが大事な場面では RAG やガードレール・人の確認で抑える。</p>
+            </li>
+            <li class="glossary-item" data-term="埋め込み エンベディング embedding">
+              <p class="glossary-term">埋め込み（Embedding）</p>
+              <p class="glossary-term-en">Embedding</p>
+              <p class="glossary-desc">テキストや画像を「意味が近いと数値も近い」ベクトルに変換したもの。検索や類似度・RAG のインデックスに用いられる。</p>
+            </li>
+            <li class="glossary-item" data-term="プロンプト プロンプトエンジニアリング">
+              <p class="glossary-term">プロンプト / プロンプトエンジニアリング</p>
+              <p class="glossary-term-en">Prompt / Prompt Engineering</p>
+              <p class="glossary-desc">LLMに渡す「指示や入力の文章」がプロンプト。それを目的に合わせて組み立て・磨くのがプロンプトエンジニアリング。実務ではここが効く。</p>
+            </li>
+            <li class="glossary-item" data-term="LLM 大規模言語モデル">
+              <p class="glossary-term">LLM（大規模言語モデル）</p>
+              <p class="glossary-term-en">Large Language Model</p>
+              <p class="glossary-desc">大量のテキストで鍛えた、大きな言語モデル。文を書く・要約・翻訳・質問に答えるなどができる。GPT・Claude・Gemini などを挙げられる。</p>
+            </li>
+            <li class="glossary-item" data-term="スケーリング則 パラメータ データ">
+              <p class="glossary-term">スケーリング則</p>
+              <p class="glossary-term-en">Scaling Laws</p>
+              <p class="glossary-desc">モデル・データ・計算を増やすと、性能がだいたい予測どおりに伸びる、という経験則。LLM を大きくする根拠のひとつ。</p>
+            </li>
+            <li class="glossary-item" data-term="Attention アテンション キー クエリ バリュー">
+              <p class="glossary-term">Attention（アテンション）</p>
+              <p class="glossary-term-en">Attention Mechanism</p>
+              <p class="glossary-desc">「いまどこを見るか」を重みで決める仕組み。Query・Key・Value の三つ組で表し、関係ありそうな情報を選んで使う。Transformer の心臓部。</p>
+            </li>
+            <li class="glossary-item" data-term="拡散モデル ディフュージョン 画像生成">
+              <p class="glossary-term">拡散モデル</p>
+              <p class="glossary-term-en">Diffusion Model</p>
+              <p class="glossary-desc">ノイズを少しずつ取りのぞいていって画像などを仕上げるモデル。画像生成の主役で、Stable Diffusion などが代表的。</p>
+            </li>
+            <li class="glossary-item" data-term="RLHF アライメント 人間のフィードバック">
+              <p class="glossary-term">RLHF・アライメント</p>
+              <p class="glossary-term-en">Reinforcement Learning from Human Feedback / Alignment</p>
+              <p class="glossary-desc">人の好みを「報酬」として強化学習に組み込み、出力を人の意図に近づける。アライメント＝AIの振る舞いを安全で役に立つようにそろえる取り組み。</p>
+            </li>
+            <li class="glossary-item" data-term="プロンプトインジェクション 攻撃">
+              <p class="glossary-term">プロンプトインジェクション</p>
+              <p class="glossary-term-en">Prompt Injection</p>
+              <p class="glossary-desc">プロンプトに悪意の指示を紛れ込ませ、挙動を変えたり情報を抜き出したりする攻撃。入力の検証やガードレールで防ぐ。</p>
+            </li>
+            <li class="glossary-item" data-term="Zero-shot Few-shot ゼロショット">
+              <p class="glossary-term">Zero-shot・Few-shot</p>
+              <p class="glossary-term-en">Zero-shot / Few-shot Learning</p>
+              <p class="glossary-desc">Zero-shot＝例を出さず指示だけでやらせること。Few-shot＝プロンプトに少数の例を入れてやり方を合わせること。LLMの in-context learning とセットで語られる。</p>
+            </li>
+            <li class="glossary-item" data-term="基盤モデル ファウンデーションモデル">
+              <p class="glossary-term">基盤モデル</p>
+              <p class="glossary-term-en">Foundation Model</p>
+              <p class="glossary-desc">大きなデータで事前学習した、いろんなタスクに流用できるモデル。ファインチューニングやプロンプトで用途を広げる。LLMやマルチモーダルモデルがここに入る。</p>
+            </li>
+            <li class="glossary-item" data-term="トークン トークナイザー">
+              <p class="glossary-term">トークン・トークナイザー</p>
+              <p class="glossary-term-en">Token / Tokenizer</p>
+              <p class="glossary-desc">テキストを「モデルが食べる単位」に切ったものがトークン。その切り分けをするのがトークナイザー。コンテキスト長もトークン数で数える。</p>
+            </li>
+            <li class="glossary-item" data-term="Instruction Tuning 指示 チューニング">
+              <p class="glossary-term">Instruction Tuning</p>
+              <p class="glossary-term-en">Instruction Tuning</p>
+              <p class="glossary-desc">「指示」と「そのときの正しい応答」のペアで追加学習し、指示に従うようにする。チャット型 LLM の基盤のひとつ。</p>
+            </li>
+            <li class="glossary-item" data-term="GPT BERT 言語モデル">
+              <p class="glossary-term">GPT・BERT</p>
+              <p class="glossary-term-en">Generative Pre-trained Transformer / BERT</p>
+              <p class="glossary-desc">GPT＝次に来るトークンを当てる「デコーダ型」で、ChatGPT の基盤。BERT＝文脈を前後両方から見る「エンコーダ型」で、分類や質問応答に用いられる。</p>
+            </li>
+            <li class="glossary-item" data-term="サンプリング 温度 トップp">
+              <p class="glossary-term">サンプリング・温度・Top-p</p>
+              <p class="glossary-term-en">Sampling / Temperature / Top-p</p>
+              <p class="glossary-desc">次のトークンを確率に従ってどう選ぶか。温度＝ランダムさの強さ、Top-p＝候補を確率でしぼる。出力のバラつきや固さの調整に用いる。</p>
+            </li>
+            <li class="glossary-item" data-term="in-context learning コンテキスト学習">
+              <p class="glossary-term">In-Context Learning</p>
+              <p class="glossary-term-en">In-Context Learning</p>
+              <p class="glossary-desc">プロンプトにのせた例や情報だけで、パラメータをいじらずにタスクを解く LLM の性質。Few-shot とセットで使う。</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">自然言語・画像・音声処理</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="OCR 文字認識">
+              <p class="glossary-term">OCR（光学文字認識）</p>
+              <p class="glossary-term-en">Optical Character Recognition</p>
+              <p class="glossary-desc">画像や PDF から文字を取り出す技術。書類のデジタル化・帳票読み・LLM に渡す前処理などで使う。</p>
+            </li>
+            <li class="glossary-item" data-term="音声認識 ASR 音声合成">
+              <p class="glossary-term">音声認識・音声合成</p>
+              <p class="glossary-term-en">Speech Recognition / Speech Synthesis</p>
+              <p class="glossary-desc">音声認識（ASR）＝音声を文字に。音声合成（TTS）＝文字から音声を。どちらも深層学習で精度が一気に上がった。</p>
+            </li>
+            <li class="glossary-item" data-term="自然言語処理 NLP">
+              <p class="glossary-term">自然言語処理（NLP）</p>
+              <p class="glossary-term-en">Natural Language Processing</p>
+              <p class="glossary-desc">ことばをコンピュータで扱う技術の総称。翻訳・要約・感情分析・質問応答・LLM などがここに入る。</p>
+            </li>
+            <li class="glossary-item" data-term="Text-to-Image 画像生成 DALL-E">
+              <p class="glossary-term">Text-to-Image</p>
+              <p class="glossary-term-en">Text-to-Image</p>
+              <p class="glossary-desc">文章の説明から画像をつくり出すタスク。DALL・E や Stable Diffusion・Midjourney などが代表的。</p>
+            </li>
+            <li class="glossary-item" data-term="形態素解析 分かち書き">
+              <p class="glossary-term">形態素解析</p>
+              <p class="glossary-term-en">Morphological Analysis</p>
+              <p class="glossary-desc">文を形態素（意味の最小単位）にバラす処理。日本語の分かち書きや品詞付けの前提となる。MeCab などで行う。</p>
+            </li>
+            <li class="glossary-item" data-term="画像認識 物体検出 セグメンテーション">
+              <p class="glossary-term">画像認識・物体検出・セグメンテーション</p>
+              <p class="glossary-term-en">Image Recognition / Object Detection / Segmentation</p>
+              <p class="glossary-desc">画像認識＝写っているものを種類分け。物体検出＝どこに何があるかを出す。セグメンテーション＝ピクセル単位で領域を分ける。CNN や Vision Transformer で実現される。</p>
+            </li>
+            <li class="glossary-item" data-term="word2vec 分散表現 単語">
+              <p class="glossary-term">word2vec・分散表現</p>
+              <p class="glossary-term-en">Word2Vec / Distributed Representation</p>
+              <p class="glossary-desc">単語をベクトルに変換する方法。意味が近い単語ほどベクトルも近くなる。one-hot ではなく連続ベクトルで表す考え方。</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">エージェント・連携</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="ツール呼び出し 関数呼び出し">
+              <p class="glossary-term">ツール呼び出し・関数呼び出し</p>
+              <p class="glossary-term-en">Tool Use / Function Calling</p>
+              <p class="glossary-desc">LLM が外の API や関数を呼び出す仕組み。検索・計算・DB 操作などをエージェントが自分でやるときに用いる。</p>
+            </li>
+            <li class="glossary-item" data-term="コンテキスト 文脈 コンテキスト長">
+              <p class="glossary-term">コンテキスト・コンテキスト長</p>
+              <p class="glossary-term-en">Context / Context Length</p>
+              <p class="glossary-desc">モデルが答えを出すときに見る情報（会話の流れ・検索結果・システムの指示など）。コンテキスト長＝いっぺんに渡せるトークン数の上限。</p>
+            </li>
+            <li class="glossary-item" data-term="AIエージェント エージェント">
+              <p class="glossary-term">AIエージェント</p>
+              <p class="glossary-term-en">AI Agent</p>
+              <p class="glossary-desc">目標に向かって自分で判断し、ツールや検索・コード実行を組み合わせて仕事を進める AI。LLM を頭脳に、外の世界とやり取りしながら動く。</p>
+            </li>
+            <li class="glossary-item" data-term="ReAct 推論 行動">
+              <p class="glossary-term">ReAct</p>
+              <p class="glossary-term-en">Reasoning + Acting</p>
+              <p class="glossary-desc">「考える」と「動く」を交互に回すエージェントの型。考え→行動→結果を見る、のループで課題を少しずつ解いていく。</p>
+            </li>
+            <li class="glossary-item" data-term="API エーピーアイ">
+              <p class="glossary-term">API</p>
+              <p class="glossary-term-en">Application Programming Interface</p>
+              <p class="glossary-desc">プログラム同士が情報や機能を渡し合うための窓口。LLM や外部サービスをアプリに入れるときも API でつなぐ。</p>
+            </li>
+            <li class="glossary-item" data-term="MCP Model Context Protocol">
+              <p class="glossary-term">MCP（Model Context Protocol）</p>
+              <p class="glossary-term-en">Model Context Protocol</p>
+              <p class="glossary-desc">AI が外部のツール・データ・API と安全につながるための約束ごと。ファイル操作や API 統合の基盤として用いられる。</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">AI倫理・ガバナンス・社会実装</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="トレーサビリティ 再現性">
+              <p class="glossary-term">トレーサビリティ・再現性</p>
+              <p class="glossary-term-en">Traceability / Reproducibility</p>
+              <p class="glossary-desc">データの出どころやモデルの学習条件をたどれること＝トレーサビリティ。同じ条件で同じ結果が出ること＝再現性。監査や品質管理で重要。</p>
+            </li>
+            <li class="glossary-item" data-term="敵対的攻撃 アドバーサリアル">
+              <p class="glossary-term">敵対的攻撃（アドバーサリアル攻撃）</p>
+              <p class="glossary-term-en">Adversarial Attack</p>
+              <p class="glossary-desc">わずかなノイズを意図的に加えて、モデルを誤判定させる攻撃。画像認識や生成 AI のセキュリティ・信頼性の文脈で話題になる。</p>
+            </li>
+            <li class="glossary-item" data-term="プライバシー 個人情報 GDPR">
+              <p class="glossary-term">プライバシー・個人情報保護</p>
+              <p class="glossary-term-en">Privacy / Personal Data Protection</p>
+              <p class="glossary-desc">AI はデータをたくさん使うため、個人情報保護法や GDPR にのっとった扱いが求められる。最初からプライバシーを組み込む考え方も重要。</p>
+            </li>
+            <li class="glossary-item" data-term="CRISP-DM プロジェクト">
+              <p class="glossary-term">CRISP-DM</p>
+              <p class="glossary-term-en">CRISP-DM</p>
+              <p class="glossary-desc">データ・AI プロジェクトの進め方を整理した枠組み。ビジネス理解→データ理解→モデリング→評価→導入、といった段階で語られる。</p>
+            </li>
+            <li class="glossary-item" data-term="バイアス 公平性 アルゴリズムバイアス">
+              <p class="glossary-term">バイアス・公平性</p>
+              <p class="glossary-term-en">Bias / Fairness</p>
+              <p class="glossary-desc">データの偏りがそのまま出力に出て、特定の属性で不当な結果になってしまうこと。公平性をどう保つかは AI 倫理の大きなテーマ。</p>
+            </li>
+            <li class="glossary-item" data-term="透明性レポート 開示">
+              <p class="glossary-term">透明性レポート</p>
+              <p class="glossary-term-en">Transparency Report</p>
+              <p class="glossary-desc">学習データ・できること・制限・利用状況などを外に開示する報告。説明可能性やガバナンスの一環として求められることがある。</p>
+            </li>
+            <li class="glossary-item" data-term="AI倫理  AIガバナンス">
+              <p class="glossary-term">AI倫理・AIガバナンス</p>
+              <p class="glossary-term-en">AI Ethics / AI Governance</p>
+              <p class="glossary-desc">AI をどうつくり・使うかの価値の軸（公平・透明・説明できる・プライバシーなど）と、組織でどう統制するか。国内外で指針や規制が話題になっている。</p>
+            </li>
+            <li class="glossary-item" data-term="ディープフェイク フェイク">
+              <p class="glossary-term">ディープフェイク</p>
+              <p class="glossary-term-en">Deepfake</p>
+              <p class="glossary-desc">深層学習で人の顔や声を合成・差し替えたコンテンツ。悪用の防止や検知技術が、社会課題として議論されている。</p>
+            </li>
+            <li class="glossary-item" data-term="MLOps 運用 本番">
+              <p class="glossary-term">MLOps</p>
+              <p class="glossary-term-en">MLOps</p>
+              <p class="glossary-desc">モデルの開発〜デプロイ〜監視〜再学習までを、ひと続きで回しやすくする。CI/CD や再現性・監視・追跡がポイント。</p>
+            </li>
+            <li class="glossary-item" data-term="説明可能性 XAI ブラックボックス">
+              <p class="glossary-term">説明可能性（XAI）</p>
+              <p class="glossary-term-en">Explainable AI</p>
+              <p class="glossary-desc">AI がなぜそう判断したかを、人が追えるようにする取り組み。深層学習は中身が見えにくいので、Grad-CAM や SHAP などの手法で説明を補う。</p>
+            </li>
+            <li class="glossary-item" data-term="著作権 生成AI 学習データ">
+              <p class="glossary-term">生成AIと著作権</p>
+              <p class="glossary-term-en">Copyright &amp; Generative AI</p>
+              <p class="glossary-desc">生成 AI の学習に使うデータの利用や、AI がつくったものの権利を誰が持つか、といった論点。各国で指針や法整備が進んでいる。</p>
+            </li>
+            <li class="glossary-item" data-term="リスクベース アプローチ 規制">
+              <p class="glossary-term">リスクベースアプローチ</p>
+              <p class="glossary-term-en">Risk-based Approach</p>
+              <p class="glossary-desc">用途ごとのリスクの高さに応じて、規制や対策の強さを変えようという考え方。EU の AI 法などで取り入れられている。</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">事業・インフラ</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="アノテーション ラベル付け">
+              <p class="glossary-term">アノテーション</p>
+              <p class="glossary-term-en">Annotation</p>
+              <p class="glossary-desc">学習データに「正解」のラベルや境界などを付ける作業。画像のどこに何があるか・音声の文字起こし・テキストのタグ付けなど。教師あり学習には欠かせない。</p>
+            </li>
+            <li class="glossary-item" data-term="クラウド GPU 推論">
+              <p class="glossary-term">クラウド・GPU</p>
+              <p class="glossary-term-en">Cloud / GPU</p>
+              <p class="glossary-desc">クラウド＝ネット越しにリソースを使う形。GPU＝深層学習の学習・推論を速めるハード。LLM API や学習環境をクラウドで提供するサービスも増えている。</p>
+            </li>
+            <li class="glossary-item" data-term="Project CRAai プロジェクト">
+              <p class="glossary-term">Project "CRAai"</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">ファイルの処理を軸にタスクを回し、MCP などで API をまとめて事業を動かす自律システム。CRAai がつくる中核プロジェクトの名前。</p>
+            </li>
+            <li class="glossary-item" data-term="データサイエンティスト">
+              <p class="glossary-term">データサイエンティスト</p>
+              <p class="glossary-term-en">Data Scientist</p>
+              <p class="glossary-desc">データの集め方・分析・モデルづくり・ビジネスへの落とし込みまでを担う役割。統計や機械学習と現場の知識を組み合わせて価値を出す。</p>
+            </li>
+            <li class="glossary-item" data-term="IoT モノのインターネット">
+              <p class="glossary-term">IoT</p>
+              <p class="glossary-term-en">Internet of Things</p>
+              <p class="glossary-desc">センサーや機器をネットでつなぎ、データを集めたり制御したりする仕組み。AI と組み合わせて予測保全やスマート工場などに用いられる。</p>
+            </li>
+            <li class="glossary-item" data-term="自律運営 自律 事業">
+              <p class="glossary-term">自律運営</p>
+              <p class="glossary-term-en">Autonomous Operation</p>
+              <p class="glossary-desc">人がつきっきりでいなくても、AI やシステムが判断し実行し、価値を出し続ける運営のしかた。CRAai のビジョンの核。</p>
+            </li>
+            <li class="glossary-item" data-term="RPA 業務自動化">
+              <p class="glossary-term">RPA</p>
+              <p class="glossary-term-en">Robotic Process Automation</p>
+              <p class="glossary-desc">決まった業務をソフトのロボットで自動化する技術。AI をのせた IPA（知的プロセスオートメーション）へ広がりつつある。</p>
+            </li>
+            <li class="glossary-item" data-term="PoC 概念実証">
+              <p class="glossary-term">PoC（概念実証）</p>
+              <p class="glossary-term-en">Proof of Concept</p>
+              <p class="glossary-desc">技術やアイデアが本当にできるかを、小さい規模で試すこと。AI 導入では、データ・精度・業務との相性を見る段階で用いる。</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer-napier">
+    <div class="footer-inner">
+      <div class="footer-bottom" style="margin-bottom:0; padding-top:1.5rem; border-top:1px solid var(--border);">
+        <p class="footer-copy">© 2025 CRAai. All rights reserved.</p>
+        <nav class="footer-legal">
+          <a href="terms.html">利用規約</a>
+          <a href="privacy.html">プライバシーポリシー</a>
+        </nav>
+        <a href="index.html" class="footer-logo" style="font-size:1rem;">CRAai</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    (function() {
+      var search = document.getElementById('glossary-search');
+      var items = document.querySelectorAll('.glossary-item');
+      if (!search || !items.length) return;
+      search.addEventListener('input', function() {
+        var q = (this.value || '').trim().toLowerCase();
+        items.forEach(function(item) {
+          var term = (item.getAttribute('data-term') || '').toLowerCase();
+          var text = (item.textContent || '').toLowerCase();
+          var show = !q || term.indexOf(q) !== -1 || text.indexOf(q) !== -1;
+          item.style.display = show ? '' : 'none';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

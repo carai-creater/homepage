@@ -4,24 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CRAai | オフィシャルサイト</title>
-  <meta name="description" content="CRAaiのオフィシャルウェブサイト。私たちはテクノロジーで新しい価値を創造します。">
+  <meta name="description" content="CRAai — AIが人間に必要な事業を自律的に運営する世界を実現する。市場の需要に応える事業開発と、AIエージェントが自律的に行動するためのインフラを提供します。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .hero-content, .hero-title, .hero-subtitle { opacity: 1 !important; visibility: visible !important; }
+    .section, .container, .scroll-reveal { opacity: 1 !important; transform: none !important; }
+  </style>
 </head>
 <body class="page-home">
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo">CRAai</a>
       <nav class="nav">
-        <a href="#about">会社概要</a>
-        <a href="#services">事業内容</a>
+        <a href="#vision">ビジョン</a>
+        <a href="#mission">ミッション</a>
+        <a href="#services">サービス</a>
         <a href="#projects">プロジェクト</a>
+        <a href="#company">会社情報</a>
         <a href="blog.html">Blog</a>
         <a href="news.html">News</a>
         <a href="careers.html">採用情報</a>
-        <a href="#contact">お問い合わせ</a>
+        <a href="glossary.html">AI用語一覧</a>
+        <a href="contact.html">お問い合わせ</a>
         <nav class="lang-nav" aria-label="言語選択">
           <span class="lang-nav-label">Lang</span>
           <a href="index.html" class="lang-opt is-current">日本語</a>
@@ -49,30 +56,60 @@
       </div>
       <div class="hero-content hero-content-center">
         <h1 class="hero-title hero-title-main">CRAai</h1>
-        <p class="hero-subtitle">テクノロジーで、未来を創る。</p>
+        <p class="hero-subtitle">事業を自律駆動可能な形にし、経済、産業インフラの拡大を実現する。</p>
       </div>
     </section>
 
-    <section class="section section-about scroll-reveal" id="about">
+    <section class="section section-vision scroll-reveal is-visible" id="vision">
       <div class="container">
-        <h2 class="section-title">会社概要</h2>
-        <div class="about-content">
-          <p class="about-lead">
-            CRAaiは、最先端のテクノロジーとAIを活用し、お客様のビジネスや社会課題の解決に取り組む企業です。
-          </p>
-          <dl class="about-list">
-            <dt>会社名</dt>
-            <dd>CRAai</dd>
-            <dt>設立</dt>
-            <dd>（ご記入ください）</dd>
-            <dt>代表者</dt>
-            <dd>（ご記入ください）</dd>
-            <dt>所在地</dt>
-            <dd>（ご記入ください）</dd>
-            <dt>事業内容</dt>
-            <dd>AI・機械学習を活用したソリューション開発、研究開発、コンサルティング</dd>
-          </dl>
-        </div>
+        <h2 class="section-title">ビジョン</h2>
+        <p class="vision-statement">
+          事業を自律駆動可能な形にし、経済、産業インフラの拡大を実現する。
+        </p>
+        <p class="vision-sub">マルチモーダルAIによる多角的な需要理解と、ファイル・コードベースのシステムと統合。この一連のプロセスを構造化することで、人間が介在せずとも価値を提供し続ける「自律的な事業運営」を実現します。</p>
+      </div>
+    </section>
+
+    <section class="section section-mission scroll-reveal is-visible" id="mission">
+      <div class="container">
+        <h2 class="section-title">ミッション</h2>
+        <ul class="mission-list">
+          <li class="mission-item">
+            <h3 class="mission-heading">市場の需要に答える事業を立案、構築、運営する。</h3>
+            <p class="mission-context">マルチモーダルな市場分析から、ニーズに対して、価値あるサービスを提供する。</p>
+          </li>
+          <li class="mission-item">
+            <h3 class="mission-heading">Project "CRAai"の構築。</h3>
+            <p class="mission-context">企業のタスクは、ファイルの処理によって実行され、その結果はファイルとして蓄積される。様々なサービスのAPIをMCPを利用して統合し、事業運営していく。</p>
+          </li>
+          <li class="mission-item">
+            <h3 class="mission-heading">AIエージェント間の相互連携インフラの構築。</h3>
+            <p class="mission-context">AIエージェントが事業に必要な連携をとることを可能にし、次世代の社会基盤を提供する。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-services scroll-reveal is-visible" id="services">
+      <div class="container scroll-reveal">
+        <h2 class="section-title">サービス</h2>
+        <ul class="services-grid">
+          <li class="service-card scroll-reveal scroll-reveal-delay-1">
+            <span class="service-icon" aria-hidden="true">事業</span>
+            <h3 class="service-title">市場の需要に直結する事業群</h3>
+            <p class="service-desc">以下の<a href="#projects">プロジェクト</a>のような事業を通して、社会の需要に対応。需要の調査から新たな事業の創出を行う。</p>
+          </li>
+          <li class="service-card scroll-reveal scroll-reveal-delay-2">
+            <span class="service-icon" aria-hidden="true">CRAai</span>
+            <h3 class="service-title">自律システム（Project CRAai）</h3>
+            <p class="service-desc">各種サービスAPI、それを統合するMCPの利用を通して、事業運営を自律的に行うシステムの構築。</p>
+          </li>
+          <li class="service-card scroll-reveal scroll-reveal-delay-3">
+            <span class="service-icon" aria-hidden="true">MCP</span>
+            <h3 class="service-title">AIエージェント・インフラ</h3>
+            <p class="service-desc">AIエージェントそのものの売買、AIエージェントがシームレスにオペレーションできるシステムの提供。</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -81,51 +118,27 @@
       <figcaption class="content-img-caption">テクノロジーと都市</figcaption>
     </figure>
 
-    <section class="section section-services" id="services">
-      <div class="container scroll-reveal">
-        <h2 class="section-title">事業内容</h2>
-        <p class="section-lead">私たちは以下の領域で価値を提供しています。</p>
-        <ul class="services-grid">
-          <li class="service-card scroll-reveal scroll-reveal-delay-1">
-            <span class="service-icon" aria-hidden="true">AI</span>
-            <h3 class="service-title">AI・機械学習</h3>
-            <p class="service-desc">生成AI、LLM、AIエージェントなど最先端技術を活用したソリューションの研究・開発・導入支援を行います。</p>
-          </li>
-          <li class="service-card scroll-reveal scroll-reveal-delay-2">
-            <span class="service-icon" aria-hidden="true">R&D</span>
-            <h3 class="service-title">研究開発</h3>
-            <p class="service-desc">基礎研究から応用開発まで、お客様の課題に合わせた技術開発とプロトタイピングをサポートします。</p>
-          </li>
-          <li class="service-card scroll-reveal scroll-reveal-delay-3">
-            <span class="service-icon" aria-hidden="true">DX</span>
-            <h3 class="service-title">コンサルティング</h3>
-            <p class="service-desc">AI導入戦略の策定、データ活用、業務効率化など、デジタル変革の伴走支援を提供します。</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section section-projects scroll-reveal" id="projects">
+    <section class="section section-projects scroll-reveal is-visible" id="projects">
       <div class="container">
         <h2 class="section-title">Project List</h2>
-        <p class="section-lead">現時点で進行中のプロジェクトです。</p>
+        <p class="section-lead">市場の需要に直結する事業群の一例。予約・知の探索・位置情報・デジタル基盤など、各領域でサービスを展開しています。</p>
       </div>
       <div class="project-flow-wrap">
         <ul class="project-list" aria-label="プロジェクト一覧">
-          <li class="project-item">Buildy</li>
-          <li class="project-item">poketmap</li>
-          <li class="project-item">CRAai2</li>
-          <li class="project-item">BOOKMATE</li>
-          <li class="project-item">yoyakuru</li>
-          <li class="project-item">Y</li>
-          <li class="project-item">GEO-Sync</li>
-          <li class="project-item">Buildy</li>
-          <li class="project-item">poketmap</li>
-          <li class="project-item">CRAai2</li>
-          <li class="project-item">BOOKMATE</li>
-          <li class="project-item">yoyakuru</li>
-          <li class="project-item">Y</li>
-          <li class="project-item">GEO-Sync</li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">Buildy</span></li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">poketmap</span></li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">CRAai2</span></li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">BOOKMATE</span></li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">yoyakuru</span></li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">Y</span></li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">GEO-Sync</span></li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">Buildy</span></li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">poketmap</span></li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">CRAai2</span></li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">BOOKMATE</span></li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">yoyakuru</span></li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">Y</span></li>
+          <li class="project-item"><img class="project-item-icon" src="assets/project-icon-default.png?v=4" alt="" width="160" height="160"><span class="project-item-name">GEO-Sync</span></li>
         </ul>
       </div>
     </section>
@@ -135,11 +148,11 @@
       <figcaption class="content-img-caption">テクノロジーと創造</figcaption>
     </figure>
 
-    <section class="section section-cta scroll-reveal">
+    <section class="section section-cta scroll-reveal is-visible">
       <div class="container">
         <div class="cta-inner">
-          <h2 class="cta-title">一緒に働きませんか？</h2>
-          <p class="cta-desc">CRAaiでは、新しい技術と挑戦を大切にする仲間を募集しています。</p>
+          <h2 class="cta-title">一緒に、未来のインフラを創りませんか？</h2>
+          <p class="cta-desc">AIが自律的に価値を生み出す世界を、共に実現する仲間を募集しています。</p>
           <a href="careers.html" class="btn btn-primary">採用情報を見る</a>
         </div>
       </div>
@@ -150,7 +163,7 @@
       <figcaption class="content-img-caption">挑戦と可能性</figcaption>
     </figure>
 
-    <section class="section section-contact scroll-reveal" id="contact">
+    <section class="section section-contact scroll-reveal is-visible" id="contact">
       <div class="container">
         <h2 class="section-title">お問い合わせ</h2>
         <p class="section-lead">取材・ビジネス・採用に関するお問い合わせは下記までご連絡ください。</p>
@@ -162,6 +175,26 @@
         </div>
       </div>
     </section>
+
+    <section class="section section-about scroll-reveal is-visible" id="company">
+      <div class="container">
+        <h2 class="section-title">会社情報</h2>
+        <div class="about-content">
+          <dl class="about-list">
+            <dt>会社名</dt>
+            <dd>CRAai</dd>
+            <dt>設立</dt>
+            <dd>（ご記入ください）</dd>
+            <dt>代表者</dt>
+            <dd>（ご記入ください）</dd>
+            <dt>所在地</dt>
+            <dd>（ご記入ください）</dd>
+            <dt>事業内容</dt>
+            <dd>市場の需要に直結する事業の開発・運営、自律システム（Project CRAai）の構築、AIエージェント間連携インフラの提供</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer site-footer-napier">
@@ -169,7 +202,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="footer-logo">CRAai</a>
-          <p class="footer-tagline">CRAaiは、テクノロジーとAIで新しい価値を創造し、ビジネスや社会の課題解決に取り組みます。</p>
+          <p class="footer-tagline">自律を加速させる</p>
         </div>
         <a href="careers.html" class="btn btn-footer">採用情報を見る</a>
       </div>
@@ -177,13 +210,16 @@
         <div class="footer-col">
           <h3 class="footer-col-title">CRAai</h3>
           <ul class="footer-links">
-            <li><a href="#about">会社概要</a></li>
-            <li><a href="#services">事業内容</a></li>
+            <li><a href="#vision">ビジョン</a></li>
+            <li><a href="#mission">ミッション</a></li>
+            <li><a href="#services">サービス</a></li>
             <li><a href="#projects">プロジェクト</a></li>
+            <li><a href="#company">会社情報</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="news.html">News</a></li>
             <li><a href="careers.html">採用情報</a></li>
-            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="glossary.html">AI用語一覧</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -199,7 +235,8 @@
           <h3 class="footer-col-title">Support</h3>
           <ul class="footer-links">
             <li><a href="faq.html">よくある質問</a></li>
-            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="glossary.html">AI用語一覧</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
             <li><a href="mailto:info@craai.co.jp">メールで問い合わせ</a></li>
           </ul>
         </div>

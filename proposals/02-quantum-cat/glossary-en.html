@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Glossary | CRAai</title>
+  <meta name="description" content="Glossary of AI, machine learning, and generative AI terms. Understand the technologies behind CRAai.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body.page-glossary {
+      cursor: auto;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    body.page-glossary .site-header {
+      padding: 1rem 1.5rem;
+      border-bottom: none;
+      box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.04), 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+    body.page-glossary .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1rem;
+    }
+    body.page-glossary .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    body.page-glossary .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      align-items: center;
+      justify-content: flex-end;
+      min-width: 0;
+    }
+    body.page-glossary .nav a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    body.page-glossary .nav a:hover { color: var(--text); }
+    body.page-glossary .section {
+      padding: 2.5rem 0;
+    }
+    body.page-glossary .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    .glossary-intro { color: var(--text-muted); margin: 0 0 2rem; font-size: 0.95rem; line-height: 1.7; overflow-wrap: break-word; word-break: break-word; }
+    .glossary-intro a { color: var(--accent); text-decoration: none; }
+    .glossary-intro a:hover { text-decoration: underline; }
+    .glossary-category { margin-bottom: 2.5rem; }
+    .glossary-category:last-child { margin-bottom: 0; }
+    .glossary-category-title { font-size: 1.1rem; font-weight: 600; color: var(--accent); margin: 0 0 1rem; padding-bottom: 0.5rem; border-bottom: none; box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.04); }
+    .glossary-list { list-style: none; padding: 0; margin: 0; }
+    .glossary-item { background: var(--surface); border: none; border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 0.75rem; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 2px 12px rgba(0, 0, 0, 0.08); transition: box-shadow 0.2s ease; }
+    .glossary-item:hover { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 4px 20px rgba(0, 0, 0, 0.12); }
+    .glossary-term { font-weight: 600; color: var(--text); margin: 0 0 0.35rem; font-size: 1rem; }
+    .glossary-term-en { font-size: 0.8rem; color: var(--text-muted); font-weight: 400; margin: 0 0 0.5rem; }
+    .glossary-desc { margin: 0; font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; overflow-wrap: break-word; }
+    .glossary-search-wrap { margin-bottom: 2rem; }
+    .glossary-search { width: 100%; max-width: 400px; padding: 0.75rem 1rem; font-size: 1rem; border: none; border-radius: var(--radius); background: var(--surface); color: var(--text); box-sizing: border-box; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 2px 8px rgba(0, 0, 0, 0.06); }
+    .glossary-search::placeholder { color: var(--text-muted); }
+    .glossary-search:focus { outline: none; box-shadow: 0 0 0 1px rgba(255, 212, 59, 0.3), 0 0 0 3px var(--accent-glow); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  </style>
+</head>
+<body class="page-glossary">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index-en.html" class="logo">CRAai</a>
+      <nav class="nav">
+        <a href="index-en.html#about">About</a>
+        <a href="index-en.html#services">Services</a>
+        <a href="blog-en.html">Blog</a>
+        <a href="news-en.html">News</a>
+        <a href="careers-en.html">Careers</a>
+        <a href="glossary-en.html">AI Glossary</a>
+        <a href="contact-en.html">Contact</a>
+        <nav class="lang-nav" aria-label="Language">
+          <span class="lang-nav-label">Lang</span>
+          <a href="glossary.html" class="lang-opt">日本語</a>
+          <span class="lang-sep">|</span>
+          <a href="glossary-en.html" class="lang-opt is-current">English</a>
+        </nav>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero-title">AI Glossary</h1>
+        <p class="page-hero-desc">Terms and concepts in AI, machine learning, and generative AI</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container container-narrow">
+        <p class="glossary-intro">
+          Key terms used when working with autonomous systems and AI agents, grouped by category. Use the search box to filter.
+        </p>
+
+        <div class="glossary-search-wrap">
+          <label for="glossary-search" class="visually-hidden">Search terms</label>
+          <input type="search" id="glossary-search" class="glossary-search" placeholder="Search terms..." aria-label="Search terms">
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">Fundamentals of AI</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="pattern recognition">
+              <p class="glossary-term">Pattern Recognition</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Techniques for finding and classifying patterns in data. Applied in image, speech, and text recognition and has grown as a major use of machine learning.</p>
+            </li>
+            <li class="glossary-item" data-term="singularity technological">
+              <p class="glossary-term">Singularity (Technological)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">A hypothetical point where AI creates smarter AI and intelligence grows rapidly. Often discussed in ethics and impact on society.</p>
+            </li>
+            <li class="glossary-item" data-term="expert system knowledge">
+              <p class="glossary-term">Expert System</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Systems that encode expert knowledge in rules and knowledge bases and answer via inference. A classic form of AI before machine learning became dominant.</p>
+            </li>
+            <li class="glossary-item" data-term="big data">
+              <p class="glossary-term">Big Data</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Data that is too large, diverse, or fast-changing to handle with traditional methods. Used as training material for AI and is a precondition for higher performance.</p>
+            </li>
+            <li class="glossary-item" data-term="chinese room symbol">
+              <p class="glossary-term">Chinese Room</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">A thought experiment: manipulating symbols alone does not amount to “understanding.” Invoked in philosophical debates about whether AI truly understands.</p>
+            </li>
+            <li class="glossary-item" data-term="deep learning neural">
+              <p class="glossary-term">Deep Learning</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Learning with neural networks of many layers. Powers high performance in vision, speech, and language and underlies large language models and image generation.</p>
+            </li>
+            <li class="glossary-item" data-term="strong AI weak AI general">
+              <p class="glossary-term">Strong AI vs. Weak AI</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">“Weak AI” handles specific tasks such as image recognition or translation. “Strong AI” refers to human-level general intelligence, which does not exist yet.</p>
+            </li>
+            <li class="glossary-item" data-term="frame problem">
+              <p class="glossary-term">Frame Problem</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">The difficulty of cleanly separating what is relevant to an action from what is not. A recurring topic in designing robots and agents.</p>
+            </li>
+            <li class="glossary-item" data-term="data mining">
+              <p class="glossary-term">Data Mining</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">The process of discovering useful patterns and rules from large datasets, combining machine learning and statistics in both business and research.</p>
+            </li>
+            <li class="glossary-item" data-term="turing test">
+              <p class="glossary-term">Turing Test</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">The idea that if a judge cannot tell human from machine in text-only conversation, the machine can be considered intelligent. Often cited in defining AI.</p>
+            </li>
+            <li class="glossary-item" data-term="generative AI">
+              <p class="glossary-term">Generative AI</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">AI that “creates” text, images, or audio from learned patterns. Used for dialogue, summarization, creative work, and code. The shift from “predicting” to “generating” is key.</p>
+            </li>
+            <li class="glossary-item" data-term="inference recognition decision">
+              <p class="glossary-term">Inference / Recognition / Decision</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Inference = drawing conclusions from knowledge. Recognition = interpreting inputs such as images or speech. Decision = choosing actions or outputs. Core roles often ascribed to AI.</p>
+            </li>
+            <li class="glossary-item" data-term="multimodal AI">
+              <p class="glossary-term">Multimodal AI</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">AI that handles different input types—text, images, audio—together. Used when understanding needs or content from multiple angles.</p>
+            </li>
+            <li class="glossary-item" data-term="machine learning ML">
+              <p class="glossary-term">Machine Learning (ML)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Systems that learn patterns or rules from data so they can perform tasks without being explicitly programmed for every case. Often divided into supervised, unsupervised, and reinforcement learning.</p>
+            </li>
+            <li class="glossary-item" data-term="artificial intelligence AI">
+              <p class="glossary-term">Artificial Intelligence (AI)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Technologies that enable computers to reason, recognize, decide, and learn. Today this mostly refers to systems built on machine learning and deep learning.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">Overview of Machine Learning</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="confusion matrix precision recall">
+              <p class="glossary-term">Confusion Matrix / Precision / Recall</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Confusion matrix = table of predicted vs. actual. Precision = share of positive predictions that are correct. Recall = share of actual positives that were predicted. Important for imbalanced data.</p>
+            </li>
+            <li class="glossary-item" data-term="reinforcement learning reward agent">
+              <p class="glossary-term">Reinforcement Learning</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">The agent interacts with an environment and learns behavior that maximizes reward. Used in game AI, robotics, and recommendation.</p>
+            </li>
+            <li class="glossary-item" data-term="PCA principal component dimensionality">
+              <p class="glossary-term">Principal Component Analysis (PCA)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Reduces dimensions by projecting onto axes of highest variance. Used for visualization, preprocessing, and noise reduction.</p>
+            </li>
+            <li class="glossary-item" data-term="overfitting underfitting generalization">
+              <p class="glossary-term">Overfitting / Underfitting / Generalization</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Overfitting = fitting training data too closely so performance degrades elsewhere. Underfitting = model too simple to learn well. Generalization = how well the model performs on unseen data.</p>
+            </li>
+            <li class="glossary-item" data-term="SVM support vector machine">
+              <p class="glossary-term">Support Vector Machine (SVM)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Classification and regression based on maximizing the margin between classes. Kernels allow non-linear boundaries; SVMs have long been a workhorse method.</p>
+            </li>
+            <li class="glossary-item" data-term="unsupervised learning unlabeled">
+              <p class="glossary-term">Unsupervised Learning</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Learning from unlabeled data by discovering structure or patterns. Used for clustering, dimensionality reduction, and anomaly detection.</p>
+            </li>
+            <li class="glossary-item" data-term="feature feature engineering">
+              <p class="glossary-term">Feature / Feature Engineering</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">How data is represented for the model. Traditionally hand-designed; in deep learning, layers often learn useful features automatically.</p>
+            </li>
+            <li class="glossary-item" data-term="Q-learning Markov decision MDP">
+              <p class="glossary-term">Q-Learning / Markov Decision Process</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Q-learning = learning the value (Q) of taking an action in a state; a classic reinforcement learning algorithm. MDP is the mathematical framework of states, actions, rewards, and transitions.</p>
+            </li>
+            <li class="glossary-item" data-term="cross-validation holdout F1 AUC">
+              <p class="glossary-term">Cross-Validation / Model Evaluation</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Splitting data and repeatedly training and evaluating to estimate performance. Measured with accuracy, precision, recall, F1, AUC, etc.</p>
+            </li>
+            <li class="glossary-item" data-term="clustering k-means hierarchical">
+              <p class="glossary-term">Clustering</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Grouping unlabeled data by similarity. Methods include k-means and hierarchical clustering.</p>
+            </li>
+            <li class="glossary-item" data-term="ensemble learning bagging boosting">
+              <p class="glossary-term">Ensemble Learning</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Combining multiple models so their outputs are aggregated. Used to improve accuracy and generalization by compensating for individual weaknesses.</p>
+            </li>
+            <li class="glossary-item" data-term="classification regression">
+              <p class="glossary-term">Classification and Regression</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Classification = predicting discrete labels. Regression = predicting continuous values. Both are standard supervised learning tasks.</p>
+            </li>
+            <li class="glossary-item" data-term="semi-supervised self-supervised">
+              <p class="glossary-term">Semi-supervised / Self-supervised Learning</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Semi-supervised = using both labeled and unlabeled data. Self-supervised = creating labels from the data itself. LLM pre-training falls into the latter.</p>
+            </li>
+            <li class="glossary-item" data-term="decision tree random forest">
+              <p class="glossary-term">Decision Tree / Random Forest</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Decision tree = model that branches on conditions. Random forest = many trees combined, reducing overfitting and often remaining interpretable.</p>
+            </li>
+            <li class="glossary-item" data-term="logistic regression linear regression">
+              <p class="glossary-term">Logistic Regression / Linear Regression</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Linear models: linear regression for numeric prediction, logistic regression for binary classification. Simple and interpretable, often used as a baseline.</p>
+            </li>
+            <li class="glossary-item" data-term="supervised learning label">
+              <p class="glossary-term">Supervised Learning</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Learning from input–output pairs. Used for classification and regression—e.g., training image recognition from labeled photos.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">Deep Learning Building Blocks</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="ResNet skip connection residual">
+              <p class="glossary-term">ResNet / Skip Connection</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Adding inputs directly to later layers (skip connection) improves gradient flow and enables very deep networks. ResNet is a leading example.</p>
+            </li>
+            <li class="glossary-item" data-term="regularization dropout L1 L2">
+              <p class="glossary-term">Regularization / Dropout</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Ways to reduce overfitting. L1/L2 penalize large weights; dropout randomly disables units during training.</p>
+            </li>
+            <li class="glossary-item" data-term="transfer learning pre-training">
+              <p class="glossary-term">Transfer Learning / Pre-training</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Reusing a model trained on another task or dataset for a target task or smaller data. Reduces compute and data requirements.</p>
+            </li>
+            <li class="glossary-item" data-term="vanishing exploding gradient">
+              <p class="glossary-term">Vanishing / Exploding Gradient</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">In deep networks, gradients can shrink to near zero or blow up during backprop. Addressed with ReLU, skip connections, and normalization.</p>
+            </li>
+            <li class="glossary-item" data-term="activation function ReLU sigmoid">
+              <p class="glossary-term">Activation Function</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Non-linear functions (ReLU, sigmoid, tanh, softmax) applied at neurons. They provide the expressiveness of stacked layers.</p>
+            </li>
+            <li class="glossary-item" data-term="autoencoder VAE variational">
+              <p class="glossary-term">Autoencoder / VAE</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Models that compress input then reconstruct it. VAE models the compressed space probabilistically, enabling sampling of new examples.</p>
+            </li>
+            <li class="glossary-item" data-term="perceptron">
+              <p class="glossary-term">Perceptron</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">The simplest unit: weighted sum of inputs and a threshold. Stacking many gives a multilayer perceptron (MLP).</p>
+            </li>
+            <li class="glossary-item" data-term="batch normalization layer normalization">
+              <p class="glossary-term">Batch Normalization / Layer Normalization</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Normalizing layer outputs to stabilize training. BatchNorm normalizes per batch; LayerNorm is common in Transformers.</p>
+            </li>
+            <li class="glossary-item" data-term="backpropagation gradient">
+              <p class="glossary-term">Backpropagation</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Propagating error backward through the network to compute how to update each weight. Essential for training deep networks.</p>
+            </li>
+            <li class="glossary-item" data-term="CNN convolutional image">
+              <p class="glossary-term">Convolutional Neural Network (CNN)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Networks using convolution and pooling to capture local structure. Standard for image recognition, object detection, and segmentation.</p>
+            </li>
+            <li class="glossary-item" data-term="hyperparameter tuning">
+              <p class="glossary-term">Hyperparameter</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Values set before training (learning rate, depth, batch size, etc.). Tuned via grid search, random search, or Bayesian optimization.</p>
+            </li>
+            <li class="glossary-item" data-term="gradient descent learning rate epoch SGD">
+              <p class="glossary-term">Gradient Descent / Learning Rate / Epoch</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Updating parameters along the gradient. Learning rate = step size; epoch = one pass over the training data. SGD and Adam are widely used.</p>
+            </li>
+            <li class="glossary-item" data-term="pooling max average">
+              <p class="glossary-term">Pooling Layer</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Summarizing convolution outputs per region (e.g., max or average). Adds invariance and reduces computation.</p>
+            </li>
+            <li class="glossary-item" data-term="GAN generative adversarial">
+              <p class="glossary-term">Generative Adversarial Network (GAN)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">A generator and a discriminator compete during training. Pioneered image generation; diffusion models now dominate in many applications.</p>
+            </li>
+            <li class="glossary-item" data-term="input hidden output layer">
+              <p class="glossary-term">Input / Hidden / Output Layer</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Input layer receives data; hidden layers transform it; output layer produces the final prediction. Deeper networks can represent more complex functions.</p>
+            </li>
+            <li class="glossary-item" data-term="RNN LSTM sequence">
+              <p class="glossary-term">RNN / LSTM</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Networks for sequential data. RNNs maintain state but suffer from vanishing gradients; LSTM uses gating to capture long-range dependencies.</p>
+            </li>
+            <li class="glossary-item" data-term="Adam SGD optimizer">
+              <p class="glossary-term">Adam / SGD (Optimizers)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">SGD updates parameters using gradients per minibatch. Adam adds momentum and adaptive learning rates and is a default in deep learning.</p>
+            </li>
+            <li class="glossary-item" data-term="neural network">
+              <p class="glossary-term">Neural Network</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Models inspired by biological neurons. Layers of nodes with learned weights and activations transform input through training.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">Generative AI &amp; LLM Technologies</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="guardrail safety output">
+              <p class="glossary-term">Guardrail</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Mechanisms to monitor and constrain generative AI inputs and outputs—blocking harmful or sensitive content via prompts, filters, and policies.</p>
+            </li>
+            <li class="glossary-item" data-term="RAG retrieval augmented generation">
+              <p class="glossary-term">Retrieval-Augmented Generation (RAG)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Retrieving external knowledge or documents and feeding them into the prompt so the LLM can answer with fewer hallucinations and with up-to-date or internal data.</p>
+            </li>
+            <li class="glossary-item" data-term="chain-of-thought CoT reasoning">
+              <p class="glossary-term">Chain-of-Thought (CoT)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Prompting the model to “think step by step.” Can improve quality on complex reasoning and math tasks.</p>
+            </li>
+            <li class="glossary-item" data-term="transformer attention">
+              <p class="glossary-term">Transformer</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Architecture centered on attention, processing long-range dependencies in parallel. The basis for most current LLMs.</p>
+            </li>
+            <li class="glossary-item" data-term="benchmark leaderboard evaluation">
+              <p class="glossary-term">Benchmark / Leaderboard</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Standard tasks and datasets for comparing models (e.g., GLUE, MMLU). Leaderboards rank results.</p>
+            </li>
+            <li class="glossary-item" data-term="fine-tuning instruction">
+              <p class="glossary-term">Fine-tuning</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Further training a pre-trained model on a target task or domain. Instruction tuning trains the model to follow instructions.</p>
+            </li>
+            <li class="glossary-item" data-term="hallucination">
+              <p class="glossary-term">Hallucination</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Output that is factually wrong but stated confidently. Mitigated with RAG, guardrails, and human review where accuracy matters.</p>
+            </li>
+            <li class="glossary-item" data-term="embedding vector">
+              <p class="glossary-term">Embedding</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Representing text or images as vectors so that similar meaning is close in vector space. Used for search, similarity, and RAG indexing.</p>
+            </li>
+            <li class="glossary-item" data-term="prompt prompt engineering">
+              <p class="glossary-term">Prompt / Prompt Engineering</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">The text (instructions and input) sent to an LLM is the prompt. Shaping and refining it for a task is prompt engineering—often where practical gains come from.</p>
+            </li>
+            <li class="glossary-item" data-term="LLM large language model">
+              <p class="glossary-term">Large Language Model (LLM)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Large models trained on huge text corpora. They can write, summarize, translate, and answer questions—e.g., GPT, Claude, Gemini.</p>
+            </li>
+            <li class="glossary-item" data-term="scaling laws parameter data">
+              <p class="glossary-term">Scaling Laws</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Empirical observation that performance improves predictably with more model size, data, and compute. One rationale for scaling up LLMs.</p>
+            </li>
+            <li class="glossary-item" data-term="attention query key value">
+              <p class="glossary-term">Attention Mechanism</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Mechanism that weights “where to look” in the input. Query, Key, and Value are used to select and combine relevant information. Core of the Transformer.</p>
+            </li>
+            <li class="glossary-item" data-term="diffusion model image generation">
+              <p class="glossary-term">Diffusion Model</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Models that iteratively remove noise to form images (or other data). Dominant in image generation—e.g., Stable Diffusion.</p>
+            </li>
+            <li class="glossary-item" data-term="RLHF alignment human feedback">
+              <p class="glossary-term">RLHF / Alignment</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Reinforcement learning from human feedback uses preferences as reward to align outputs with human intent. Alignment = making AI safe and useful.</p>
+            </li>
+            <li class="glossary-item" data-term="prompt injection attack">
+              <p class="glossary-term">Prompt Injection</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Injecting malicious instructions into prompts to change behavior or extract information. Defended by input validation and guardrails.</p>
+            </li>
+            <li class="glossary-item" data-term="zero-shot few-shot">
+              <p class="glossary-term">Zero-shot / Few-shot</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Zero-shot = task described without examples. Few-shot = a few examples in the prompt to steer behavior. Tied to in-context learning in LLMs.</p>
+            </li>
+            <li class="glossary-item" data-term="foundation model">
+              <p class="glossary-term">Foundation Model</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Large models pre-trained on broad data and adaptable to many tasks via fine-tuning or prompting. LLMs and multimodal models are examples.</p>
+            </li>
+            <li class="glossary-item" data-term="token tokenizer">
+              <p class="glossary-term">Token / Tokenizer</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Tokens are the units the model consumes; the tokenizer splits text into them. Context length is measured in tokens.</p>
+            </li>
+            <li class="glossary-item" data-term="instruction tuning">
+              <p class="glossary-term">Instruction Tuning</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Additional training on instruction–response pairs so the model follows instructions. A foundation for chat-style LLMs.</p>
+            </li>
+            <li class="glossary-item" data-term="GPT BERT language model">
+              <p class="glossary-term">GPT / BERT</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">GPT = decoder-only, predicting next tokens; basis of ChatGPT. BERT = encoder-only, using bidirectional context; used for classification and QA.</p>
+            </li>
+            <li class="glossary-item" data-term="sampling temperature top-p">
+              <p class="glossary-term">Sampling / Temperature / Top-p</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">How the next token is chosen from the distribution. Temperature controls randomness; top-p narrows the candidate set. Used to tune diversity vs. determinism.</p>
+            </li>
+            <li class="glossary-item" data-term="in-context learning">
+              <p class="glossary-term">In-Context Learning</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Solving tasks from examples or information in the prompt without updating parameters. Often used together with few-shot prompting.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">Natural Language, Image &amp; Speech</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="OCR optical character recognition">
+              <p class="glossary-term">Optical Character Recognition (OCR)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Extracting text from images or PDFs. Used for digitizing documents, forms, and as preprocessing for LLMs.</p>
+            </li>
+            <li class="glossary-item" data-term="speech recognition ASR synthesis TTS">
+              <p class="glossary-term">Speech Recognition / Speech Synthesis</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">ASR turns speech into text; TTS turns text into speech. Both have improved greatly with deep learning.</p>
+            </li>
+            <li class="glossary-item" data-term="NLP natural language processing">
+              <p class="glossary-term">Natural Language Processing (NLP)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Technologies for handling language with computers: translation, summarization, sentiment, QA, and LLMs.</p>
+            </li>
+            <li class="glossary-item" data-term="text-to-image DALL-E generation">
+              <p class="glossary-term">Text-to-Image</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Generating images from text descriptions. Examples: DALL·E, Stable Diffusion, Midjourney.</p>
+            </li>
+            <li class="glossary-item" data-term="morphological analysis tokenization">
+              <p class="glossary-term">Morphological Analysis</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Breaking text into morphemes (smallest meaning units). Foundation for tokenization and POS tagging in languages like Japanese (e.g., MeCab).</p>
+            </li>
+            <li class="glossary-item" data-term="image recognition object detection segmentation">
+              <p class="glossary-term">Image Recognition / Object Detection / Segmentation</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Recognition = classifying content. Detection = locating objects. Segmentation = pixel-level regions. Implemented with CNNs and Vision Transformers.</p>
+            </li>
+            <li class="glossary-item" data-term="word2vec distributed representation">
+              <p class="glossary-term">Word2Vec / Distributed Representation</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Representing words as vectors so similar words are close. Contrasts with one-hot encoding; foundational for many NLP methods.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">Agents &amp; Integration</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="tool use function calling">
+              <p class="glossary-term">Tool Use / Function Calling</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Letting the LLM call external APIs or functions. Used when agents need to search, compute, or access databases.</p>
+            </li>
+            <li class="glossary-item" data-term="context context length">
+              <p class="glossary-term">Context / Context Length</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">The information the model sees when generating (conversation history, retrieved docs, system instructions). Context length = maximum tokens that can be passed at once.</p>
+            </li>
+            <li class="glossary-item" data-term="AI agent agent">
+              <p class="glossary-term">AI Agent</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">AI that works toward a goal by deciding, using tools, search, or code execution. Often LLM-based and interacting with the outside world.</p>
+            </li>
+            <li class="glossary-item" data-term="ReAct reasoning acting">
+              <p class="glossary-term">ReAct</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Agent pattern that alternates “reasoning” and “acting”: think → act → observe, in a loop to solve tasks incrementally.</p>
+            </li>
+            <li class="glossary-item" data-term="API">
+              <p class="glossary-term">API</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Application Programming Interface—how programs exchange data and call services. Used to integrate LLMs and external services into applications.</p>
+            </li>
+            <li class="glossary-item" data-term="MCP Model Context Protocol">
+              <p class="glossary-term">MCP (Model Context Protocol)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">A protocol for connecting AI to external tools, data, and APIs safely. Used as a base for file operations and API integration.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">AI Ethics, Governance &amp; Deployment</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="traceability reproducibility">
+              <p class="glossary-term">Traceability / Reproducibility</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Traceability = being able to trace data sources and training conditions. Reproducibility = obtaining the same results under the same conditions. Important for audit and quality.</p>
+            </li>
+            <li class="glossary-item" data-term="adversarial attack">
+              <p class="glossary-term">Adversarial Attack</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Deliberately adding small perturbations to cause misclassification. A concern for security and reliability of vision and generative models.</p>
+            </li>
+            <li class="glossary-item" data-term="privacy GDPR personal data">
+              <p class="glossary-term">Privacy / Personal Data Protection</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">AI uses large amounts of data; compliance with privacy laws and GDPR is required. Privacy-by-design is increasingly important.</p>
+            </li>
+            <li class="glossary-item" data-term="CRISP-DM project">
+              <p class="glossary-term">CRISP-DM</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">A framework for data and AI projects: business understanding, data understanding, modeling, evaluation, deployment.</p>
+            </li>
+            <li class="glossary-item" data-term="bias fairness">
+              <p class="glossary-term">Bias / Fairness</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Data bias can lead to unfair outcomes for certain groups. Ensuring fairness is a central theme in AI ethics.</p>
+            </li>
+            <li class="glossary-item" data-term="transparency report disclosure">
+              <p class="glossary-term">Transparency Report</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Public reporting on training data, capabilities, limitations, and usage. Often requested for explainability and governance.</p>
+            </li>
+            <li class="glossary-item" data-term="AI ethics governance">
+              <p class="glossary-term">AI Ethics / AI Governance</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Values for building and using AI (fairness, transparency, explainability, privacy) and how organizations govern AI. Guidelines and regulation are evolving globally.</p>
+            </li>
+            <li class="glossary-item" data-term="deepfake">
+              <p class="glossary-term">Deepfake</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Synthetic or altered face/voice content created with deep learning. Detection and prevention of misuse are active societal and technical topics.</p>
+            </li>
+            <li class="glossary-item" data-term="MLOps deployment production">
+              <p class="glossary-term">MLOps</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Practices to run the full cycle: development, deployment, monitoring, retraining. CI/CD, reproducibility, and monitoring are key.</p>
+            </li>
+            <li class="glossary-item" data-term="explainability XAI black box">
+              <p class="glossary-term">Explainable AI (XAI)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Making AI decisions interpretable. Deep learning is opaque; methods like Grad-CAM and SHAP provide explanations.</p>
+            </li>
+            <li class="glossary-item" data-term="copyright generative AI training data">
+              <p class="glossary-term">Copyright &amp; Generative AI</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Issues around using data for training and who owns AI-generated output. Legislation and guidelines are developing in many countries.</p>
+            </li>
+            <li class="glossary-item" data-term="risk-based approach regulation">
+              <p class="glossary-term">Risk-based Approach</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Adapting regulation and safeguards to the level of risk per use case. Reflected in regulations such as the EU AI Act.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glossary-category">
+          <h2 class="glossary-category-title">Business &amp; Infrastructure</h2>
+          <ul class="glossary-list">
+            <li class="glossary-item" data-term="annotation labeling">
+              <p class="glossary-term">Annotation</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Adding labels or boundaries to training data—e.g., object locations in images, transcriptions, tags. Essential for supervised learning.</p>
+            </li>
+            <li class="glossary-item" data-term="cloud GPU inference">
+              <p class="glossary-term">Cloud / GPU</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Cloud = using compute and storage over the network. GPUs accelerate training and inference; many LLM and ML services are offered in the cloud.</p>
+            </li>
+            <li class="glossary-item" data-term="Project CRAai">
+              <p class="glossary-term">Project "CRAai"</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">An autonomous system centered on file processing, integrating APIs via MCP and similar to run operations. CRAai’s core project.</p>
+            </li>
+            <li class="glossary-item" data-term="data scientist">
+              <p class="glossary-term">Data Scientist</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Role covering data collection, analysis, modeling, and turning results into business value, combining statistics, ML, and domain knowledge.</p>
+            </li>
+            <li class="glossary-item" data-term="IoT internet of things">
+              <p class="glossary-term">IoT (Internet of Things)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Connecting sensors and devices to the network to collect data and control systems. Combined with AI for predictive maintenance, smart factories, etc.</p>
+            </li>
+            <li class="glossary-item" data-term="autonomous operation">
+              <p class="glossary-term">Autonomous Operation</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Operations that continue to deliver value with AI and systems making decisions and executing without constant human oversight. Core to CRAai’s vision.</p>
+            </li>
+            <li class="glossary-item" data-term="RPA automation">
+              <p class="glossary-term">RPA (Robotic Process Automation)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Automating rule-based tasks with software robots. Evolving toward intelligent process automation with AI.</p>
+            </li>
+            <li class="glossary-item" data-term="PoC proof of concept">
+              <p class="glossary-term">Proof of Concept (PoC)</p>
+              <p class="glossary-term-en">—</p>
+              <p class="glossary-desc">Testing whether a technology or idea works at small scale. In AI adoption, used to check data, accuracy, and fit with the business.</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer-napier">
+    <div class="footer-inner">
+      <div class="footer-bottom" style="margin-bottom:0; padding-top:1.5rem; border-top:1px solid var(--border);">
+        <p class="footer-copy">© 2025 CRAai. All rights reserved.</p>
+        <nav class="footer-legal">
+          <a href="terms-en.html">Terms of Use</a>
+          <a href="privacy-en.html">Privacy Policy</a>
+        </nav>
+        <a href="index-en.html" class="footer-logo" style="font-size:1rem;">CRAai</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    (function() {
+      var search = document.getElementById('glossary-search');
+      var items = document.querySelectorAll('.glossary-item');
+      if (!search || !items.length) return;
+      search.addEventListener('input', function() {
+        var q = (this.value || '').trim().toLowerCase();
+        items.forEach(function(item) {
+          var term = (item.getAttribute('data-term') || '').toLowerCase();
+          var text = (item.textContent || '').toLowerCase();
+          var show = !q || term.indexOf(q) !== -1 || text.indexOf(q) !== -1;
+          item.style.display = show ? '' : 'none';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
